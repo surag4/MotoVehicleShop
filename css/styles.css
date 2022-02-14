@@ -1,0 +1,337 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* #74d14c  logo ko green  */
+/* #f7f7f7  logo ko white */
+/* #0e375e  logo ko blue  */
+
+body, html {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+body {
+  background: #fff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.5rem;
+  position: relative;
+  background: #f7f7f7;
+  color: #0e375e;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.logo{
+  height: 90px;
+}
+
+.nav-list {
+  overflow: hidden;
+  display: flex;
+}
+
+.nav-list a {
+  float: left;
+  font-size: 1.2rem;
+  color: #000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  position: relative;
+}
+
+.nav-user {
+  float: left;
+  overflow: visible;
+}
+
+.nav-user .userbtn {
+  font-size: 1.2rem;  
+  border: none;
+  outline: none;
+  color: #000;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+/* hover effects */
+.nav-list a::after {
+  content: ""; 
+  display: block; 
+  position: absolute; 
+  left: 0; 
+  width: 0%;
+  height: 2px; 
+  background-color: #8FBFE0;
+  transition: .3s width ease-in-out;
+}
+
+.nav-list a:hover::after, .nav-list a:hover::before {
+  width: 100%; /* making the effect visible */
+}
+
+.nav-user-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  left:90%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  overflow: visible;
+  z-index: 1;
+}
+
+.nav-user-content a {
+  float: left;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: right;
+  width: 18rem;
+  text-align: left;
+}
+
+.nav-user-content a:hover {
+  background-color: #ddd;
+}
+
+.nav-user:hover .nav-user-content {
+  display: block; 
+}
+
+.userdet {
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.userdet a {
+  width: 1rem;
+  margin: 0;
+}
+
+.show {
+  display: block;
+}
+
+/* notification */
+.dropdown {
+  overflow: visible;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: rgb(43, 76, 224);
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.dropdown:hover .dropbtn {
+  color: rgb(0, 247, 255);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 380px;
+  max-width: 400px;
+  right: 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content img {
+  width: 80px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.itms {
+  display: flex;
+  padding: 5px 15px;
+}
+
+.itms p {
+  text-align: justify;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* search bar */
+.countsearch {
+  margin: 0 1rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  padding: 12px;
+  border-radius: 0.5rem;
+}
+
+.countsearch:hover {
+  color: #0e375e;
+  background-color: #cfcfcfcc;
+  cursor: pointer;
+}
+
+.searchcont {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.searchbarProp form{
+	display: flex;
+  width: 22rem;
+  margin: 0 1rem;
+}
+
+.searchbarProp form input[type=text] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin: 0.5rem 0 1rem;
+  resize: vertical;
+}
+
+.searchbarProp form input[type=submit] {
+	padding: 0px 20px;
+	margin: 0.5rem 12px 1rem 0.5rem;
+  background-color: #0430aa;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* vechicles listing  */
+.slider {
+  width: 90%;
+  overflow: hidden;
+  margin-left: 5%;
+}
+
+.slides {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  margin-bottom: 2rem;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+.slides::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.slides::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+.slides::-webkit-scrollbar-track {
+  background: transparent;
+}
+.slides > div {
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  width: 45%;
+  height: 350px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+img {vertical-align: middle;}
+
+.thumbnail_images {
+  width: 65%;
+  position: relative;
+  max-height: 350px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+/* vehicle details */
+.details {
+  padding: 0 1rem;
+  font-size: 1.2rem;
+  color: #3c3939;
+  display: flex;
+  flex-direction: column;
+}
+
+.details span{
+  margin: 0.15rem;
+}
+
+/* Filter Page */
+
+/* filter selections */
+.filterSelections {
+  background-color: #0430aa;
+}
+
+/* filter output */
+.filterResults {
+  background-color: #736CED;
+}
+
+/* footer */
+footer {
+  margin: 3rem 0 1rem;
+}
+
+.footer_cont {
+  width: 90%;
+  margin: 0 5%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* horizontal line */
+.footer_cont::before{
+  content:'';
+  position: absolute;
+  background-color: #736CED;
+  width: 90%;
+  height: 3px;
+  top: -1rem; 
+}
+
+.footer_main {
+  content: '';
+  font-size: 2rem;
+  font-weight: 700;
+}
