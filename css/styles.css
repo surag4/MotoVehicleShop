@@ -339,7 +339,7 @@ img {vertical-align: middle;}
   box-sizing: border-box;
 }
 
-.loginbtn, .signupbtn {
+.loginbtn{
   padding: 0.5rem;
   font-size: 1rem;
   letter-spacing: 1px;
@@ -348,10 +348,42 @@ img {vertical-align: middle;}
   width: 6rem;
 }
 
-.loginbtn:hover, .signupbtn:hover {
+.loginbtn:hover {
   background-color: #EFE5DC;
   transition: 1s ease-out;
   
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  padding: 14px 20px;
+  float: left;
+  width: 10rem;
+  margin: 1rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  background-color: #f83325d7;
+}
+
+.cancelbtn:hover {
+  background-color: #f44336;
+}
+
+/* Extra styles for signup button */
+.signupbtn {
+  background-color: #654ff1cc;
+}
+
+.signupbtn:hover{
+  background-color: #6a5acd;
 }
 
 /* about page */
