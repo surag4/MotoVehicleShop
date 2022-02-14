@@ -27,6 +27,9 @@
             </div>
 
             <div class="details">
+                <span class="name">
+                    <i class="fa-solid fa-motorcycle"> Bajaj Pulsar 250</i>
+                </span>
                 <span class="distTravelled">
                     <i class="fas fa-tachometer-alt"> 6000 km</i>
                 </span>

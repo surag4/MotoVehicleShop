@@ -84,11 +84,11 @@
     <footer>
             <section class="footer_cont">
                 <span class="footer_main">Safari Express</span>
-                <span>&#169 2021 Safari Express | All Rights Reserved.</span>
+                <span>&#169 2022 Safari Express | All Rights Reserved.</span>
             </section>
     </footer>
     <script src="../scripts/main.js"></script>
-    <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
+    <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
     <script src="../scripts/lightbox-plus-jquery.min.js"></script> <!-- file retrived from: https://lokeshdhakar.com/projects/lightbox2/ -->
 </body>
 </html>
