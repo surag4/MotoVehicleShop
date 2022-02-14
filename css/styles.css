@@ -307,6 +307,53 @@ img {vertical-align: middle;}
   background-color: #736CED;
 }
 
+/* login/signup pages container */
+
+.registration {
+  margin: 4rem;
+  border: 3px solid #f1f1f1;
+  background: #D6EDFF;
+}
+
+.registration h1 {
+  margin-bottom: 1rem;
+}
+
+/* Add padding to containers */
+.login-container, .register-container {
+  padding: 1rem;
+}
+
+.register-container label, .register-container hr {
+  font-weight: 600;
+  margin: 1rem 0;
+}
+
+/* Full-width inputs */
+.login-container input[type=text], .login-container input[type=password], .register-container input[type=email],.register-container input[type=text],.register-container input[type=password] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.loginbtn, .signupbtn {
+  padding: 0.5rem;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  background-color: #88A7D3;
+  border-radius: 0.5rem;
+  width: 6rem;
+}
+
+.loginbtn:hover, .signupbtn:hover {
+  background-color: #EFE5DC;
+  transition: 1s ease-out;
+  
+}
+
 /* about page */
 .about {
   display: flex;
