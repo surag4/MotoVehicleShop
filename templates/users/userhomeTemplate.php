@@ -27,22 +27,22 @@
             </div>
 
             <div class="details">
-                <span class="name">
-                    <i class="fa-solid fa-motorcycle"> Bajaj Pulsar 250</i>
-                </span>
-                <span class="distTravelled">
-                    <i class="fas fa-tachometer-alt"> 6000 km</i>
-                </span>
-                <span class="located">
-                    <i class="fas fa-map-marker-alt"> Kathmandu </i>
-                </span>
-                <span class="cc">
-                    <i class="fas fa-bolt"> 125cc </i>
-                </span>
-                <span class="price">
-                    <i class="fas fa-rupee-sign"> 31000 </i>
-                </span>
-                <a href="#"> Details </a>
+                <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
+                <span class="name">Bajaj Pulsar 250</span>
+
+                <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
+                <span class="distTravelled">6000 km</span>
+
+                <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
+                <span class="located"> Kathmandu </span>
+                    
+                <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
+                <span class="cc">125cc</span>
+
+                <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
+                <span class="price">31000</span>
+
+                <a href="#" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -66,19 +66,22 @@
             </div>
 
             <div class="details">
-                <span class="distTravelled">
-                    <i class="fas fa-tachometer-alt"> 6000 km</i>
-                </span>
-                <span class="located">
-                    <i class="fas fa-map-marker-alt"> Kathmandu </i>
-                </span>
-                <span class="cc">
-                    <i class="fas fa-bolt"> 125cc </i>
-                </span>
-                <span class="price">
-                    <i class="fas fa-rupee-sign"> 31000 </i>
-                </span>
-                <a href="#"> Details </a>
+                <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
+                <span class="name">Bajaj Pulsar 250</span>
+
+                <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
+                <span class="distTravelled">6000 km</span>
+
+                <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
+                <span class="located"> Kathmandu </span>
+                    
+                <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
+                <span class="cc">125cc</span>
+
+                <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
+                <span class="price">31000</span>
+
+                <a href="#" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -98,19 +101,22 @@
             </div>
 
             <div class="details">
-                <span class="distTravelled">
-                    <i class="fas fa-tachometer-alt"> 6000 km</i>
-                </span>
-                <span class="located">
-                    <i class="fas fa-map-marker-alt"> Kathmandu </i>
-                </span>
-                <span class="cc">
-                    <i class="fas fa-bolt"> 125cc </i>
-                </span>
-                <span class="price">
-                    <i class="fas fa-rupee-sign"> 31000 </i>
-                </span>
-                <a href="#"> Details </a>
+                <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
+                <span class="name">Bajaj Pulsar 250</span>
+
+                <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
+                <span class="distTravelled">6000 km</span>
+
+                <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
+                <span class="located"> Kathmandu </span>
+                    
+                <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
+                <span class="cc">125cc</span>
+
+                <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
+                <span class="price">31000</span>
+
+                <a href="#" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>

@@ -6,21 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
     <link rel="stylesheet" href="../css/styles.css">
-    <script type="text/javascript" src="../css/js.js"></script>
+    <script src="../scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
         <nav>
             <div class="logo">
-            <a href="index.php"> <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd"></a>
+                <a href="index.php"> <img src="../images/logo/logo.jpg" alt="Safari Express"></a>
             </div>
 
             <div class="nav-list">
                 <a href="index.php">Home</a>
+                <!-- logged in links -->
                 <?php
                     if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                        echo '<a href="index.php?page=history">History</a>';
-                        echo '<a href="index.php?page=chatnow">Chat</a>';}
+                        // echo '<a href="index.php?page=history">History</a>';
+                        // echo '<a href="index.php?page=chatnow">Chat</a>';
+                    }
                 ?>
                 <a href="index.php?page=about">About</a>
                 <a href="index.php?page=contact">Contact Us</a>
@@ -82,13 +85,13 @@
     </main>
 
     <footer>
-            <section class="footer_cont">
-                <span class="footer_main">Safari Express</span>
-                <span>&#169 2022 Safari Express | All Rights Reserved.</span>
-            </section>
+        <section class="footer_cont">
+            <span class="footer_main">Safari Express</span>
+            <span>&#169 2022 Safari Express | All Rights Reserved.</span>
+        </section>
     </footer>
-    <script src="../scripts/main.js"></script>
-    <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
+    
     <script src="../scripts/lightbox-plus-jquery.min.js"></script> <!-- file retrived from: https://lokeshdhakar.com/projects/lightbox2/ -->
 </body>
+<script src="../scripts/alternative.js"></script>
 </html>

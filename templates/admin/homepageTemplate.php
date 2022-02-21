@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
-    <script src="../css/js.js"></script>
     <link rel="stylesheet" href="../css/adminstyles.css">
+    <script src="../scripts/main.js"></script>
+    <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <header>
-        <div class="logo">
-           <a href="index.php"> <img src="../images/logo/logo.png" alt="Local Partners Pty Ltd"></a>
-        </div>
+    <div class="logo">
+        <a href="index.php"> <img src="../images/logo/logo.jpg" alt="Safari Express"></a>
+    </div>
 
         <nav>
             <div class="links">
@@ -74,11 +75,9 @@
 
     <footer>
         <section class="footer_cont">
-            <span class="footer_main">Loyal Partners Pty. Ltd</span>
-            <span>&#169 2021 Loyal Partners Pty. Ltd | All Rights Reserved.</span>
+            <span class="footer_main">Safari Express</span>
+            <span>&#169 2022 Safari Express | All Rights Reserved.</span>
         </section>
     </footer>
 </body>
-    <script src="../scripts/main.js"></script>
-    <script src="https://kit.fontawesome.com/6d2ea823d0.js"></script>
 </html>
