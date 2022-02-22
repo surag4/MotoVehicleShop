@@ -4,6 +4,6 @@
 	$username = 'test';
 	$password = 'test';
 
-	$schema = 'motovehicle';
+	$schema = 'loyalpartners';
 	$pdo = new PDO('mysql:dbname=' . $schema . ';host=' . $server, $username,$password, [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 ?>
