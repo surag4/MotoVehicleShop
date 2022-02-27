@@ -19,7 +19,7 @@
     <div class="slides">
         <?php  
             foreach ($trendScooter as $value) {
-                $pidjs = $value['prop_id'];
+                $pidjs = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
@@ -58,7 +58,7 @@
     <div class="slides">
         <?php  
             foreach ($trendBike as $value) {
-                $pidjss = $value['prop_id'];
+                $pidjss = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
@@ -93,7 +93,7 @@
     <div class="slides">
         <?php  
             foreach ($popular as $value) {
-                $pidjsss = $value['prop_id'];
+                $pidjsss = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 

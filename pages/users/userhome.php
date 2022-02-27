@@ -1,9 +1,9 @@
 <?php
 	$title = "Local Partners Pty Ltd";
 	$conn = new DatabaseTable('properties');
-	$trendScooter=$conn->orderOn('prop_id');
-	$trendBike=$conn->orderOn('prop_id');
-	$popular=$conn->orderOn('prop_id');
+	$trendScooter=$conn->orderOn('vec_id');
+	$trendBike=$conn->orderOn('vec_id');
+	$popular=$conn->orderOn('vec_id');
 	
 	if(isset($_POST['book_prop'])){
 		if(isset($_SESSION["login"]) && $_SESSION["login"]== True){
@@ -15,5 +15,5 @@
 		}
 	}
 
-	$content = loadTemplate('../templates/users/userhomeTemplate.php', ['trendScooter'=>$trendScooter, 'trendBike'=>$trendBike, 'popular'=>$popular]);//load template
+	$content = loadTemplate('../templates/users/userhomeTemplate.php', ["trendScooter"=>$trendScooter,"trendBike"=>$trendBike,"popular"=>$popular]);//load template
 ?>

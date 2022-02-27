@@ -23,6 +23,8 @@
                     if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
                         // echo '<a href="index.php?page=history">History</a>';
                         // echo '<a href="index.php?page=chatnow">Chat</a>';
+                        echo '<a href="index.php?page=AddVechicle">Add Vehicle</a>';
+
                     }
                 ?>
                 <a href="index.php?page=about">About</a>

@@ -1,6 +1,6 @@
 <?php
 	$title = "Local Partners Pty Ltd";
-	$connToInsert = new DatabaseTable('users');
+	$connToInsert = new DatabaseTable('costumer');
 	
 	if(isset($_POST['usersubmit'])){
 		unset($_POST['usersubmit']);
