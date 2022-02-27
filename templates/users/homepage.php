@@ -23,10 +23,13 @@
                     if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
                         // echo '<a href="index.php?page=history">History</a>';
                         // echo '<a href="index.php?page=chatnow">Chat</a>';
-                        echo '<a href="index.php?page=AddVechicle">Add Vehicle</a>';
+                       echo '<a href="index.php?page=AddVechicle">Add Vehicle</a>';
 
                     }
                 ?>
+                 <form method="POST" action="index.php?page=login">
+                            <input class ="login" type="submit" value="LogOut" name="logout">
+                        </form>
                 <a href="index.php?page=about">About</a>
                 <a href="index.php?page=contact">Contact Us</a>
                     
@@ -37,20 +40,14 @@
                 <div class="dropdown" id="dropdown">
                     <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
                     <div class="dropdown-content" id="dropdown-content">
-                        <?php 
-                            $connN=new DatabaseTable('notification');
-                            $allnotif=$connN->notifAll();
-                            foreach ($allnotif as $value) { 
-                                if($value['role']==$_SESSION['role'] || $value['role']=="Everyone" ||$value['role']==$_SESSION['username']){
-                        ?>
+                       
                         <div class="itms">
                             <img src="../images/logo/avatar1.png" alt="logo">
                             <div class="text">
-                                <h4><?php echo $value['notif_title'];?></h4>
-                                <p><?php echo $value['notif_msg'];?></p>
+                               
                             </div><br>
                         </div>
-                        <?php }} ?>
+                        
                     </div>
                 </div>
                 <?php } ?>  

@@ -16,7 +16,7 @@
 				$bol=1;
 				echo "User login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["userName"]=$_POST['userName'];
+				$_SESSION["username"]=$_POST['userName'];
 				$_SESSION["user_id"]=$value['custID'];
 				$_SESSION["role"]=$value['role'];	
 				header('location:index.php?page=userhome');
@@ -25,7 +25,7 @@
 				$bol=1;
 				echo "Staff login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["userName"]=$_POST['userName'];
+				$_SESSION["username"]=$_POST['userName'];
 				$_SESSION["role"]=$value['role'];
 				header('location:../admin/index.php');
 			}
@@ -33,7 +33,7 @@
 				$bol=1;
 				echo "Admin login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["userName"]=$_POST['userName'];
+				$_SESSION["username"]=$_POST['userName'];
 				$_SESSION["role"]=$value['role'];
 				header('location:../admin/index.php');
 			}

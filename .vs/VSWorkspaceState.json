@@ -1,11 +1,15 @@
 {
   "ExpandedNodes": [
     "",
+    "\\admin",
+    "\\classes",
     "\\pages",
-    "\\pages\\users",
+    "\\pages\\admin",
+    "\\public_html",
     "\\templates",
+    "\\templates\\admin",
     "\\templates\\users"
   ],
-  "SelectedNode": "\\templates\\users\\loginTemplate.php",
+  "SelectedNode": "\\pages\\admin\\addupdateproperty.php",
   "PreviewInSolutionExplorer": false
 }
