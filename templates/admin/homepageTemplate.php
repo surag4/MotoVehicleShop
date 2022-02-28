@@ -17,16 +17,8 @@
 
         <nav>
             <div class="links">
-                <a href="index.php?page=manageproperty">Properties</a>
-                <a href="index.php?page=findclients">Clients</a>
-                <a href="index.php?page=chat">Chat</a>
-                <?php
-                    if((isset($_SESSION['login']) && $_SESSION['login'] == 1) && $_SESSION['username']=="admin"){
-                    echo "<a href=index.php?page=notif>Manage Notifications</a>";
-                    echo "<a href=index.php?page=staff>Staff Details</a>";
-                    }
-                ?>
-                <a href="index.php?page=report">Report</a>
+                <a href="index.php?page=approve">Approve</a>
+                
             </div>
             <div class="login">
                 <!-- logged in user -->
@@ -39,12 +31,7 @@
                 <div class="dropdown" id="dropdown">
                     <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
                     <div class="dropdown-content" id="dropdown-content">
-                        <?php 
-                            $connN=new DatabaseTable('notification');
-                            $allnotif=$connN->findAll();
-                            foreach ($allnotif as $value) { 
-                                if($value['role']=="staff" || $value['role']=="Everyone"){
-                        ?>
+                       
                         <div class="itms">
                             <img src="../images/logo/avatar1.png" alt="logo">
                             <div class="text">
@@ -52,7 +39,6 @@
                                 <p><?php echo $value['notif_msg'];?></p>
                             </div><br>
                         </div>
-                        <?php }} ?>
                     </div>
                 </div>
                 <!-- Logout button -->

@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\admin",
+    "\\classes",
+    "\\pages",
+    "\\pages\\admin",
+    "\\public_html",
+    "\\templates",
+    "\\templates\\admin",
+    "\\templates\\users"
+  ],
+  "SelectedNode": "\\pages\\admin\\addupdateproperty.php",
+  "PreviewInSolutionExplorer": false
+}

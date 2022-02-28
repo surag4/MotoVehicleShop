@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 14, 2022 at 01:23 PM
+-- Generation Time: Feb 27, 2022 at 05:18 PM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -33,8 +33,18 @@ CREATE TABLE `costumer` (
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
   `firstName` varchar(255) NOT NULL,
-  `lastName` varchar(255) NOT NULL
+  `lastName` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `costumer`
+--
+
+INSERT INTO `costumer` (`custID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
+(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user'),
+(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user'),
+(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -73,6 +83,57 @@ INSERT INTO `manufacturer` (`brandID`, `brandName`) VALUES
 (19, 'Suzuki'),
 (20, 'TVS'),
 (21, 'Yamaha');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `notification`
+--
+
+CREATE TABLE `notification` (
+  `notif_id` int(255) NOT NULL,
+  `notif_title` varchar(255) NOT NULL,
+  `notif_msg` varchar(255) NOT NULL,
+  `notif_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `role` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `notification`
+--
+
+INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `role`) VALUES
+(1, 'Covid Safety', 'Mask lagam chill basam', '2022-02-27 06:54:35', 'Everyone');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `properties`
+--
+
+CREATE TABLE `properties` (
+  `vec_id` int(255) NOT NULL,
+  `vec_name` varchar(255) NOT NULL,
+  `vec_distance` int(255) NOT NULL,
+  `vec_location` varchar(255) NOT NULL,
+  `vec_engine` varchar(255) NOT NULL,
+  `vec_price` int(255) NOT NULL,
+  `vec_upload_date` date NOT NULL,
+  `custID` int(255) DEFAULT NULL,
+  `type` varchar(255) NOT NULL,
+  `vec_brand` varchar(255) NOT NULL,
+  `vec_model` varchar(255) NOT NULL,
+  `upload_status` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `properties`
+--
+
+INSERT INTO `properties` (`vec_id`, `vec_name`, `vec_distance`, `vec_location`, `vec_engine`, `vec_price`, `vec_upload_date`, `custID`, `type`, `vec_brand`, `vec_model`, `upload_status`) VALUES
+(1, 'pulsar', 344556, 'ktm', '125', 454554, '2026-02-22', 0, 'Bike', '0', '0', 0),
+(2, 'Dio', 435566, 'pok', '90', 90000, '2027-02-22', 1, 'Scooter', '0', '0', 0),
+(4, 'Amir2', 36, 'lainchour', '45', 65, '2027-02-22', 1, 'Bike', 'Honda', 'horney', 1);
 
 -- --------------------------------------------------------
 
@@ -187,6 +248,28 @@ CREATE TABLE `vehicleregistration` (
   `vehicleID` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vehicle_category`
+--
+
+CREATE TABLE `vehicle_category` (
+  `cat_id` int(255) NOT NULL,
+  `vec_id` int(255) NOT NULL,
+  `hitcount` int(255) NOT NULL,
+  `category` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `vehicle_category`
+--
+
+INSERT INTO `vehicle_category` (`cat_id`, `vec_id`, `hitcount`, `category`) VALUES
+(1, 4, 0, 'normal'),
+(2, 4, 0, 'normal'),
+(3, 4, 0, 'normal');
+
 --
 -- Indexes for dumped tables
 --
@@ -202,6 +285,18 @@ ALTER TABLE `costumer`
 --
 ALTER TABLE `manufacturer`
   ADD PRIMARY KEY (`brandID`);
+
+--
+-- Indexes for table `notification`
+--
+ALTER TABLE `notification`
+  ADD PRIMARY KEY (`notif_id`);
+
+--
+-- Indexes for table `properties`
+--
+ALTER TABLE `properties`
+  ADD PRIMARY KEY (`vec_id`);
 
 --
 -- Indexes for table `staff`
@@ -222,6 +317,12 @@ ALTER TABLE `vehicle`
   ADD PRIMARY KEY (`vehicleID`);
 
 --
+-- Indexes for table `vehicle_category`
+--
+ALTER TABLE `vehicle_category`
+  ADD PRIMARY KEY (`cat_id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -229,13 +330,25 @@ ALTER TABLE `vehicle`
 -- AUTO_INCREMENT for table `costumer`
 --
 ALTER TABLE `costumer`
-  MODIFY `custID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `custID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `manufacturer`
 --
 ALTER TABLE `manufacturer`
   MODIFY `brandID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
+-- AUTO_INCREMENT for table `notification`
+--
+ALTER TABLE `notification`
+  MODIFY `notif_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `properties`
+--
+ALTER TABLE `properties`
+  MODIFY `vec_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `staff`
@@ -254,6 +367,12 @@ ALTER TABLE `type`
 --
 ALTER TABLE `vehicle`
   MODIFY `vehicleID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `vehicle_category`
+--
+ALTER TABLE `vehicle_category`
+  MODIFY `cat_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

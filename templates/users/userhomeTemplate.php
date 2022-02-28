@@ -18,7 +18,8 @@
     <h2>Trendy Used Scooter in Market</h2>
     <div class="slides">
         <?php  
-            for ($pidjs = 1; $pidjs <= 7; $pidjs++) {
+            foreach ($trendScooter as $value) {
+                $pidjs = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
@@ -56,7 +57,8 @@
     <h2>Trendy Used Bikes in Market</h2>
     <div class="slides">
         <?php  
-            for ($pidjss = 3; $pidjss <= 7; $pidjss++) {
+            foreach ($trendBike as $value) {
+                $pidjss = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
@@ -90,7 +92,8 @@
     <h2>Popular Bikes/Scooter</h2>
     <div class="slides">
         <?php  
-            for ($pidjsss = 2; $pidjsss <= 8; $pidjsss++) {
+            foreach ($popular as $value) {
+                $pidjsss = $value['vec_id'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 

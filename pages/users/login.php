@@ -1,7 +1,7 @@
 <?php
 	$title = "Local Partners Pty Ltd";
 	$message="";
-	$conn = new DatabaseTable('users');
+	$conn = new DatabaseTable('costumer');
 	$data=$conn->findAll();
 	
 	if(isset($_POST['logout'])){
@@ -12,28 +12,28 @@
 	if(isset($_POST['login'])){
 		$bol=0;
 		foreach($data as $value){
-			if($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='user'){
+			if($value['userName']==$_POST['userName'] && $value['password']==$_POST['password'] && $value['role']=='user'){
 				$bol=1;
 				echo "User login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["username"]=$_POST['username'];
-				$_SESSION["user_id"]=$value['user_id'];
+				$_SESSION["username"]=$_POST['userName'];
+				$_SESSION["user_id"]=$value['custID'];
 				$_SESSION["role"]=$value['role'];	
 				header('location:index.php?page=userhome');
 			}
-			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='staff'){
+			elseif($value['userName']==$_POST['userName'] && $value['password']==$_POST['password'] && $value['role']=='staff'){
 				$bol=1;
 				echo "Staff login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["username"]=$_POST['username'];
+				$_SESSION["username"]=$_POST['userName'];
 				$_SESSION["role"]=$value['role'];
 				header('location:../admin/index.php');
 			}
-			elseif($value['username']==$_POST['username'] && $value['password']==$_POST['password'] && $value['role']=='admin'){
+			elseif($value['userName']==$_POST['userName'] && $value['password']==$_POST['password'] && $value['role']=='admin'){
 				$bol=1;
 				echo "Admin login Success";
 				$_SESSION["login"]=1;
-				$_SESSION["username"]=$_POST['username'];
+				$_SESSION["username"]=$_POST['userName'];
 				$_SESSION["role"]=$value['role'];
 				header('location:../admin/index.php');
 			}
