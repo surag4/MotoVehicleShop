@@ -13,7 +13,7 @@ body, html {
 }
 
 body {
-  background: #fff;
+  background: #D9DDD8;
 }
 
 nav {
@@ -24,7 +24,7 @@ nav {
   align-items: center;
   padding: 0 0.5rem;
   position: relative;
-  background: #f7f7f7;
+  background: #BEC5BC;
   color: #0e375e;
   font-size: 1.2rem;
   font-weight: 700;
@@ -246,6 +246,7 @@ nav {
   margin-bottom: 2rem;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  background-color: #fff;
 }
 
 .slides::-webkit-scrollbar {
@@ -273,6 +274,8 @@ nav {
   justify-content: center;
   align-items: center;
 
+  border: 1px solid black;
+  margin: 0.5rem;
 }
 
 img {vertical-align: middle;}
@@ -283,6 +286,7 @@ img {vertical-align: middle;}
   max-height: 350px;
   overflow: hidden;
   background-color: #000;
+  margin: 0 auto;
 }
 
 /* vehicle details */
@@ -299,7 +303,7 @@ img {vertical-align: middle;}
 .price {grid-area: price;}
 .getvechicledetails {grid-area: getvechicledetails;}
 
-.details {
+.details, .filter_details {
   padding: 0 1rem;
   font-size: 1.2rem;
   color: #3c3939;
@@ -320,9 +324,35 @@ img {vertical-align: middle;}
   align-content: center;
 }
 
-/* Filter Page */
+/* flash sale viewport */
+.flashsale {
+  display: grid;
+  width: 90%;
+  margin: 5rem 0 0 5%;
+  grid-template-columns: auto auto auto;
+  gap: 1rem;
+  position: relative;
+}
+
+.flashsale::before {
+  content: 'Premium Offer Vehicles';
+  position: absolute;
+  top: -3.2rem; 
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.sale {
+  background-color: #fff;
+}
+
+/* Filter Page  Start */
 .filterPrice {
   margin: 10px 0;
+}
+
+.filtersubhead {
+  font-size: 1.2rem;
 }
 
 /* filter selections */
@@ -333,13 +363,6 @@ img {vertical-align: middle;}
   padding: 5px;
 }
 
-/* filter output */
-.filterResults {
-  background-color: #736CED;
-  grid-area: 'filterresult';
-  width: 100%;
-}
-
 .filter {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -347,6 +370,13 @@ img {vertical-align: middle;}
   grid-template-areas: 
     'filterselection filterresult filterresult';
   padding: 1rem;
+}
+
+.filterPrice, .filterDist, .filterCC, .filterBrand, .filterModel, .filterYear {
+  background-color: #98fb98;
+  margin: 1rem 0;
+  padding: 1rem 0.5rem;
+
 }
 
 /* price selection start */
@@ -410,7 +440,8 @@ input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;
   -moz-appearance: none;
 }
-input[type="range"]::-webkit-slider-thumb{
+
+.filterSelections input[type="range"]::-webkit-slider-thumb{
   height: 17px;
   width: 17px;
   border-radius: 50%;
@@ -419,7 +450,8 @@ input[type="range"]::-webkit-slider-thumb{
   -webkit-appearance: none;
   box-shadow: 0 0 6px rgba(0,0,0,0.05);
 }
-input[type="range"]::-moz-range-thumb{
+
+.filterSelections input[type="range"]::-moz-range-thumb{
   height: 17px;
   width: 17px;
   border: none;
@@ -429,7 +461,106 @@ input[type="range"]::-moz-range-thumb{
   -moz-appearance: none;
   box-shadow: 0 0 6px rgba(0,0,0,0.05);
 }
+
+.filterSelections input[type="submit"]{
+  font-size: 1.2rem;
+  margin: 0 auto 0 3.8rem;
+  padding: 0.5rem;
+}
+
+/* distance and year selection */
+.distcont, .yearcont {
+  display: flex;
+  margin: 0.5rem 0;
+}
+
+.distcont input[type="number"], .yearcont input[type="number"] {
+  width: 6rem;
+  margin: 0 0.2rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.distcont input::-webkit-outer-spin-button,
+.distcont input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.distcont input[type=number] {
+  -moz-appearance: textfield;
+}
+
+/* year inputs */
+/* Chrome, Safari, Edge, Opera */
+.yearcont input::-webkit-outer-spin-button,
+.yearcont input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+.yearcont input[type=number] {
+  -moz-appearance: textfield;
+}
+
 /* price selection end */
+.filterCC label {
+  cursor: pointer;
+}
+
+.filterCC input[type="checkbox"] {
+  margin: 5px 10px;
+}
+
+/* filter output */
+.filterResults {
+  grid-area: 'filterresult';
+  width: 100%;
+  display: grid;
+  grid-template-areas: "a a a";
+  grid-auto-rows: max-content;
+  gap: 1rem;
+  margin-top: 2rem;
+  position: relative;
+}
+
+.filterResults::before {
+  content: 'Search Results';
+  position: absolute;
+  top: -2rem; 
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.filterResults > div {
+  background-color: #fff;
+}
+
+.filtervehicle {
+  height: 400px;
+  transform-origin: center center;
+  transform: scale(1);
+  transition: transform 0.5s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  margin: 0.5rem;
+}
+
+.filter_thumbnail_images {
+  overflow: hidden;
+}
+
+.filter_details {
+  margin: 1rem 0 auto 0;
+  gap: 0.5rem;
+}
+
+/* fillter  page end */
 
 /* login/signup Pages container */
 
@@ -654,11 +785,10 @@ input[type="range"]::-moz-range-thumb{
 /* footer */
 footer {
   margin: 3rem 0 1rem;
+  background-color: #BEC5BC;
 }
 
 .footer_cont {
-  width: 90%;
-  margin: 0 5%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -670,9 +800,9 @@ footer {
   content:'';
   position: absolute;
   background-color: #736CED;
-  width: 90%;
+  width: 100%;
   height: 3px;
-  top: -1rem; 
+  top: -1.2rem; 
 }
 
 .footer_main {
