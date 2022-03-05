@@ -11,27 +11,23 @@
 </head>
 <body>
     <header>
-    <div class="logo">
-        <a href="index.php"> <img src="../images/logo/logo.jpg" alt="Safari Express"></a>
-    </div>
-
         <nav>
+            <div class="logo">
+                <a href="index.php"> <img src="../images/logo/logo.jpg" alt="Safari Express"></a>
+            </div>
+
+            <!-- logged in user -->
+            <?php if(isset($_SESSION['login']) && $_SESSION['login'] == 1){ ?>
             <div class="links">
                 <a href="index.php?page=approve">Approve</a>
-                
             </div>
-            <div class="login">
-                <!-- logged in user -->
-                <?php
-                if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                    echo '<b><a href="#">User: '. $_SESSION['username'] .'</a></b>' ;
-                ?>
 
+            <div class="login">
+                <?php echo '<b><a href="#">User: '. $_SESSION['userName'] .'</a></b>' ; ?>
                 <!-- notification bell -->
                 <div class="dropdown" id="dropdown">
                     <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
-                    <div class="dropdown-content" id="dropdown-content">
-                       
+                    <div class="dropdown-content" id="dropdown-content"> 
                         <div class="itms">
                             <img src="../images/logo/avatar1.png" alt="logo">
                             <div class="text">
