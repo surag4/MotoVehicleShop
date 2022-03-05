@@ -1,6 +1,6 @@
 <?php
-	$title = "Local Partners Pty Ltd";
-	$connToInsert = new DatabaseTable('properties');
+	$title = "Safari Express";
+	$connToInsert = new DatabaseTable('vehicle');
 	if(isset($_POST['submit'])){
 	unset($_POST['submit']);
 		$connToInsert-> insert($_POST);

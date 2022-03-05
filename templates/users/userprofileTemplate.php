@@ -6,11 +6,11 @@
       <p><?php echo $status; ?></p>
       <form method="post" action="index.php?page=userprofile">
         <div class="uprofilecont">
-          <div class="uprofilefname"><label for="firstname">First Name</label></div>
-          <div class="uprofilenfamein"><input type="text" id="firstname" name="firstname" value="<?php if($data){echo $data['firstname'];}?>" required placeholder="Client's updated first name.."></div>
+          <div class="uprofilefname"><label for="firstName">First Name</label></div>
+          <div class="uprofilenfamein"><input type="text" id="firstname" name="firstName" value="<?php if($data){echo $data['firstName'];}?>" required placeholder="Client's updated first name.."></div>
           
-          <div class="uprofilelname"><label for="lname">Last Name</label></div>
-          <div class="uprofilelnamein"><input type="text" id="lastname" name="lastname" value="<?php if($data){echo $data['lastname'];}?>" required placeholder="Client's updated last name.."></div>
+          <div class="uprofilelname"><label for="lastName">Last Name</label></div>
+          <div class="uprofilelnamein"><input type="text" id="lastname" name="lastName" value="<?php if($data){echo $data['lastName'];}?>" required placeholder="Client's updated last name.."></div>
 
           <div class="uprofilemail"><label for="email">Email</label></div>
           <div class="uprofilemailin"><input type="email" id="email" name="email" value="<?php if($data){echo $data['email'];}?>" required placeholder="Updated Email Address"></div>

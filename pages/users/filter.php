@@ -1,6 +1,8 @@
 <?php
     $title="Search Results";
-    // $conn= new DatabaseTable('contactform');
+    $conn_brand = new DatabaseTable('manufacturer');
+	$brands=$conn_brand->brandmodel();
+    $brandlist=$conn_brand->findAll('manufacturer');
 
-	$content = loadTemplate('../templates/users/searchTemplate.php', []);//load template
+	$content = loadTemplate('../templates/users/searchTemplate.php', ['brands'=>$brands,'brandlist'=>$brandlist]);//load template
 ?>

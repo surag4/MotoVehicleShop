@@ -1,5 +1,5 @@
 <?php
-	$title = "Local Partners Pty Ltd";
+	$title = "Safari Express";
 	$conn = new DatabaseTable('properties');
 	$trendScooter=$conn->orderOn('vec_id');
 	$trendBike=$conn->orderOn('vec_id');

@@ -1,6 +1,6 @@
 <?php
-	$title = "Local Partners Pty Ltd";
-	$connToInsert = new DatabaseTable('costumer');
+	$title = "Safari Express | Sign UP";
+	$connToInsert = new DatabaseTable('users');
 	
 	if(isset($_POST['usersubmit'])){
 		unset($_POST['usersubmit']);

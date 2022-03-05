@@ -27,9 +27,7 @@
 
                     }
                 ?>
-                 <form method="POST" action="index.php?page=login">
-                            <input class ="login" type="submit" value="LogOut" name="logout">
-                        </form>
+                
                 <a href="index.php?page=about">About</a>
                 <a href="index.php?page=contact">Contact Us</a>
                     
@@ -60,7 +58,7 @@
                             <?php
                                 //if logged in
                                 if(isset($_SESSION['login']) && $_SESSION['login'] == 1){
-                                    echo '<div class="userdet">'.'Hi '. $_SESSION['username'] .'<a href="index.php?page=userprofile"> <i class="fas fa-user-edit"></i>
+                                    echo '<div class="userdet">'.'Hi '. $_SESSION['userName'] .'<a href="index.php?page=userprofile"> <i class="fas fa-user-edit"></i>
                                     </a></div>';
                             ?> 
                         <!-- logout -->
