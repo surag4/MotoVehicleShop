@@ -106,5 +106,13 @@ function getlastVal($field) {//passed as array
         return $stmt;
 }
 
+function brandmodel() {
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT manufacturer.brandName, type.modelName, type.modelID, type.brandID FROM manufacturer INNER JOIN type ON manufacturer.brandID=type.brandID; ');
+        $stmt->execute();
+
+        return $stmt;
+}
+
 }
 ?>
