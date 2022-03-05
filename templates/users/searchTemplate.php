@@ -50,32 +50,16 @@
           <label> <input type="checkbox" name="cc" value="1000above"> 1000cc - Above </label> <br>               
         </fieldset>    
       </div>
-
+      
       <div class="filterBrand">
           <p  class="filtersubhead">Brand</p>
           <select name="brand" id="brand" onchange="modellist(this.options[this.selectedIndex].value);">
             <option value="">Select Brand</option>
-            <option value="aprilia">Aprilia</option>
-            <option value="bajaj">Bajaj Motorcycles</option>
-            <option value="benelli">Benelli</option>
-            <option value="bmw">BMW</option>
-            <option value="cfmoto">CFMOTO</option>
-            <option value="crossfire">CrossFire</option>
-            <option value="ducati">Ducati</option>
-            <option value="haojue">Haojue</option>
-            <option value="hero">Hero</option>
-            <option value="honda">Honda</option>
-            <option value="husqvarna">Husqvarna</option>
-            <option value="jawa">JAWA</option>
-            <option value="kawasaki">Kawasaki</option>
-            <option value="ktm">KTM</option>
-            <option value="mahindra">Mahindra</option>
-            <option value="mvagusta">MV Agusta</option>
-            <option value="royalenfield">Royal Enfield</option>
-            <option value="runner">Runner</option>
-            <option value="suzuki">Suzuki</option>
-            <option value="tvs">TVS</option>
-            <option value="Yamaha">Yamaha</option>
+            <?php 
+              foreach ($brandlist as $value) {
+                echo '<option value="'.$value['brandName'].'">'.$value['brandName'].'</option>';
+              } 
+            ?>
           </select>
       </div>
   
@@ -136,3 +120,36 @@
     <?php } ?>
   </section>
 </article>
+
+<script>
+// filter dropdown menu for brand/models
+
+function modellist(listindex) {
+
+  document.formname.model.options.length = 0;
+  switch (listindex) {
+    <?php
+      $modelcount = 1;
+      $brandcount = 1;
+      foreach ($brands as $value) {    
+        if ($brandcount == $value['brandID']) {
+          if ($modelcount == 1) {
+            echo 'case "'.$value['brandName'].'": '; 
+            echo 'document.formname.model.options[0] = new Option("Select Model", "");';
+          }
+          echo 'document.formname.model.options['.$modelcount.'] = new Option("'.$value['modelName'].'", "'.$value['modelName'].'");';
+          $modelcount=$modelcount+1;
+        } else {
+          echo 'break;';
+          $brandcount = $brandcount+1;
+          $modelcount = 1;
+          
+        }  
+      } 
+    ?>
+    break;
+
+  }
+  return true;
+}
+</script>
