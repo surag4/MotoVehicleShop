@@ -94,7 +94,47 @@ function delete($field, $value) {//passed as array
 
 function orderOn($givenid){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' ORDER BY '.$givenid.' DESC;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id ORDER BY '.$givenid.' DESC LIMIT 7;');
+    $stmt->execute();
+    return $stmt;
+}
+
+function orderOnScooter($givenid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT *
+FROM properties
+INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
+WHERE properties.type="Scooter" 
+ORDER BY vehicle_category.hitcount DESC;');
+    $stmt->execute();
+    return $stmt;
+}
+
+function findAllVec(){
+     global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id;');
+    $stmt->execute();
+    return $stmt;
+
+}
+
+function orderOnBike($givenid){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT *
+FROM properties
+INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
+WHERE properties.type="Bike" 
+ORDER BY vehicle_category.hitcount DESC;');
+    $stmt->execute();
+    return $stmt;
+}
+
+function orderOnPremium(){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT *
+FROM properties
+INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
+WHERE vehicle_category.category="premium";');
     $stmt->execute();
     return $stmt;
 }

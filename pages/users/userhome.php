@@ -1,9 +1,10 @@
 <?php
 	$title = "Safari Express";
 	$conn = new DatabaseTable('properties');
-	$trendScooter=$conn->orderOn('vec_id');
-	$trendBike=$conn->orderOn('vec_id');
-	$popular=$conn->orderOn('vec_id');
+	$trendScooter=$conn->orderOnScooter('vec_id');
+	$trendBike=$conn->orderOnBike('vec_id');
+	$popular=$conn->orderOn('vec_price');
+	$premiumSale=$conn->orderOnPremium();
 	
 	if(isset($_POST['book_prop'])){
 		if(isset($_SESSION["login"]) && $_SESSION["login"]== True){
@@ -15,5 +16,5 @@
 		}
 	}
 
-	$content = loadTemplate('../templates/users/userhomeTemplate.php', ["trendScooter"=>$trendScooter,"trendBike"=>$trendBike,"popular"=>$popular]);//load template
+	$content = loadTemplate('../templates/users/userhomeTemplate.php', ["trendScooter"=>$trendScooter,"trendBike"=>$trendBike,"popular"=>$popular,"premiumSale"=>$premiumSale]);//load template
 ?>

@@ -1,7 +1,7 @@
 <?php
 	$title = "Safari Express | Login";
 	$message="";
-	$conn = new DatabaseTable('users');
+	$conn = new DatabaseTable('costumer');
 	$data=$conn->findAll();
 	
 	if(isset($_POST['logout'])){

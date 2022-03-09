@@ -61,6 +61,7 @@
             </div>
 
             <input type="hidden" name="upload_status" value="0">
+            <input type="hidden" name="views" value="0">
             <input type="hidden" name="vec_upload_date" value=<?php echo date('d-m-y');?>>
             
             <input type="hidden" name="userID" value="1">
