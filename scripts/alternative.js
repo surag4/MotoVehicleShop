@@ -40,3 +40,33 @@ rangeInput.forEach(input => {
         }
     });
 });
+
+// property pictures viewer in enquiry page
+var PropslideIndex = 1;
+showSlides(PropslideIndex);
+
+function propViewerSlides(na) {
+    showSlides(PropslideIndex += na);
+}
+
+function currentPropViewSlide(na) {
+    showSlides(PropslideIndex = na);
+}
+
+function showSlides(na) {
+    var x;
+    var slides = document.getElementsByClassName("prop_picture_cont");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (na > slides.length) { PropslideIndex = 1 }
+    if (na < 1) { PropslideIndex = slides.length }
+    for (x = 0; x < slides.length; x++) {
+        slides[x].style.display = "none";
+    }
+    for (x = 0; x < dots.length; x++) {
+        dots[x].className = dots[x].className.replace("active", "");
+    }
+    slides[PropslideIndex - 1].style.display = "block";
+    dots[PropslideIndex - 1].className += " active";
+    captionText.innerHTML = dots[PropslideIndex - 1].alt;
+}
