@@ -52,6 +52,29 @@ CREATE TABLE `costumer` (
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+
+CREATE TABLE `users` (
+  `userID` int(11) NOT NULL,
+  `userName` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
+(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user'),
+(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user'),
+(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin'),
+(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user');
+
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
+
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+COMMIT;
 --
 -- Dumping data for table `costumer`
 --
