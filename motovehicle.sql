@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 09, 2022 at 07:37 PM
+-- Generation Time: Mar 10, 2022 at 06:02 PM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -52,29 +52,6 @@ CREATE TABLE `costumer` (
   `role` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-
-CREATE TABLE `users` (
-  `userID` int(11) NOT NULL,
-  `userName` varchar(255) NOT NULL,
-  `email` varchar(255) NOT NULL,
-  `password` varchar(255) NOT NULL,
-  `firstName` varchar(255) NOT NULL,
-  `lastName` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
-INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
-(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user'),
-(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user'),
-(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin'),
-(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user');
-
-ALTER TABLE `users`
-  ADD PRIMARY KEY (`userID`);
-
-ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-COMMIT;
 --
 -- Dumping data for table `costumer`
 --
@@ -161,20 +138,22 @@ CREATE TABLE `properties` (
   `type` varchar(255) NOT NULL,
   `vec_brand` varchar(255) NOT NULL,
   `vec_model` varchar(255) NOT NULL,
-  `upload_status` int(255) NOT NULL
+  `upload_status` int(255) NOT NULL,
+  `description` varchar(255) DEFAULT NULL,
+  `owner` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `properties`
 --
 
-INSERT INTO `properties` (`vec_id`, `vec_name`, `vec_distance`, `vec_location`, `vec_engine`, `vec_price`, `vec_upload_date`, `custID`, `type`, `vec_brand`, `vec_model`, `upload_status`) VALUES
-(1, 'pulsar', 344556, 'ktm', '125', 454554, '2026-02-22', 0, 'Bike', '0', '0', 1),
-(2, 'Dio', 435566, 'pok', '90', 90000, '2027-02-22', 1, 'Scooter', '0', '0', 1),
-(3, 'Example', 21345, 'Bashundhara', '500', 98765, '2022-03-09', 2, 'Bike', 'Hero', '2016', 0),
-(4, 'VR', 21000, 'lainchour', '150 CC', 65000, '2027-02-22', 1, 'Bike', 'Honda', 'VR 2012', 1),
-(5, 'Vespa', 2600, 'Babarmahal', '125 CC', 230000, '0000-00-00', 2, 'Scooter', 'Vespa', '2019', 1),
-(6, 'Grazia', 4300, 'Lalitpur', '110 cc', 90000, '0000-00-00', 3, 'Scooter', 'Honda', '2017', 1);
+INSERT INTO `properties` (`vec_id`, `vec_name`, `vec_distance`, `vec_location`, `vec_engine`, `vec_price`, `vec_upload_date`, `custID`, `type`, `vec_brand`, `vec_model`, `upload_status`, `description`, `owner`) VALUES
+(1, 'pulsar', 344556, 'ktm', '125', 454554, '2026-02-22', 0, 'Bike', '0', '0', 1, NULL, 0),
+(2, 'Dio', 435566, 'pok', '90', 90000, '2027-02-22', 1, 'Scooter', '0', '0', 1, NULL, 0),
+(3, 'Example', 21345, 'Bashundhara', '500', 98765, '2022-03-09', 2, 'Bike', 'Hero', '2016', 0, NULL, 0),
+(4, 'VR', 21000, 'lainchour', '150 CC', 65000, '2027-02-22', 1, 'Bike', 'Honda', 'VR 2012', 1, NULL, 0),
+(5, 'Vespa', 2600, 'Babarmahal', '125 CC', 230000, '0000-00-00', 2, 'Scooter', 'Vespa', '2019', 1, NULL, 0),
+(6, 'Grazia', 4300, 'Lalitpur', '110 cc', 90000, '0000-00-00', 3, 'Scooter', 'Honda', '2017', 1, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -260,6 +239,32 @@ INSERT INTO `type` (`modelID`, `modelName`, `brandID`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `userID` int(11) NOT NULL,
+  `userName` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `firstName` varchar(255) NOT NULL,
+  `lastName` varchar(255) NOT NULL,
+  `role` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
+(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user'),
+(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user'),
+(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin'),
+(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `vehicle`
 --
 
@@ -307,10 +312,10 @@ CREATE TABLE `vehicle_category` (
 --
 
 INSERT INTO `vehicle_category` (`cat_id`, `vec_id`, `hitcount`, `category`) VALUES
-(3, 4, 2, 'premium'),
-(4, 1, 5, 'normal'),
-(5, 2, 4, 'normal'),
-(6, 5, 8, 'normal'),
+(3, 4, 8, 'premium'),
+(4, 1, 6, 'normal'),
+(5, 2, 10, 'normal'),
+(6, 5, 17, 'normal'),
 (7, 6, 3, 'normal');
 
 --
@@ -352,6 +357,12 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `type`
   ADD PRIMARY KEY (`modelID`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`userID`);
 
 --
 -- Indexes for table `vehicle`
@@ -404,6 +415,12 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `type`
   MODIFY `modelID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vehicle`

@@ -29,6 +29,11 @@
             <label for="name">Vechicle Price</label>
             <input type="number" placeholder="Vechicle Price" name="vec_price" required>
             </div>
+
+            <div class="addveccc">
+            <label for="name">Owner Number</label>
+            <input type="number" placeholder="1st hand, 2nd hand.." name="owner" required>
+            </div>
             <!-- <input type="radio" name="type" value="Bike" checked>
             <label for="html">BIKE</label>
             <input type="radio" name="type" value="Scooter">
@@ -63,6 +68,9 @@
             <input type="hidden" name="upload_status" value="0">
             <input type="hidden" name="views" value="0">
             <input type="hidden" name="vec_upload_date" value=<?php echo date('d-m-y');?>>
+
+            <label>Description</label>
+            <textarea name="description" rows="4" cols="50"></textarea>
             
             <input type="hidden" name="userID" value="1">
             <div class="registerbtns">

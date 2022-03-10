@@ -4,12 +4,11 @@
     "\\admin",
     "\\classes",
     "\\pages",
-    "\\pages\\admin",
+    "\\pages\\users",
     "\\public_html",
     "\\templates",
-    "\\templates\\admin",
     "\\templates\\users"
   ],
-  "SelectedNode": "\\pages\\admin\\addupdateproperty.php",
+  "SelectedNode": "\\templates\\users\\userhomeTemplate.php",
   "PreviewInSolutionExplorer": false
 }

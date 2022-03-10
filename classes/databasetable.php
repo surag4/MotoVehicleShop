@@ -80,6 +80,12 @@ function gettingChat($person1,$person2){
     return $stmt;
 }
 
+function updateHitPoint($id){
+    global $pdo;
+    $stmt = $pdo->prepare('UPDATE vehicle_category SET hitcount = hitcount + 1 WHERE vec_id ='.$id.';');
+    $stmt->execute();
+    return $stmt;
+}
 //function delete
 function delete($field, $value) {//passed as array
     global $pdo;
@@ -116,6 +122,13 @@ function findAllVec(){
     $stmt->execute();
     return $stmt;
 
+}
+
+function findVec($val){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM properties INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id WHERE properties.vec_id='.$val.';');
+    $stmt->execute();
+    return $stmt;
 }
 
 function orderOnBike($givenid){

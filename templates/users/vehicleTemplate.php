@@ -1,11 +1,14 @@
 <section>
+<?php
+foreach($data as $value){
+?>
     <div class="vehicledetails">
-        <h2><?php echo "Entry Year + Vehicle Model";?></h2>
-        <h5><?php echo "Location"." | "."No of Views"." | "."Posted no o Days Ago";?></h5>
+        <h2><?php echo $value['vec_name'];?></h2>
+        <h5><?php echo "Location: ".$value['vec_location']." | No. of Views: ".$value['hitcount']." | Date Uploaded: ".$value['vec_upload_date'];?></h5>
         
         <div class="property_pictures">
             <?php
-                $pid =1;
+                $pid =$value['vec_id'];
 
                 $counter=1;
                 $dire = "../images/".$pid;
@@ -54,7 +57,7 @@
                 <i class="fa-solid fa-calendar fa-2xl"></i>
                 <div class="vehiconlist">
                     <span class="vehiconhead">Year</span>
-                    <span class="vehiconval">2020</span>
+                    <span class="vehiconval"><?php echo $value['vec_model'];?></span>
                 </div>
             </div>
 
@@ -62,7 +65,7 @@
                 <i class="fa-solid fa-user fa-2xl"></i>
                 <div class="vehiconlist">
                     <span class="vehiconhead">Owner</span>
-                    <span class="vehiconval">1st Owner</span>
+                    <span class="vehiconval"><?php echo $value['owner'];?></span>
                 </div>
             </div>
 
@@ -70,7 +73,7 @@
                 <i class="fas fa-map-marker-alt fa-2xl"></i>
                 <div class="vehiconlist">
                     <span class="vehiconhead">Location</span>
-                    <span class="vehiconval">2020</span>
+                    <span class="vehiconval"><?php echo $value['vec_location'];?></span>
                 </div>
             </div>
 
@@ -78,7 +81,7 @@
                 <i class="fas fa-tachometer-alt fa-2xl"></i>
                 <div class="vehiconlist">
                     <span class="vehiconhead">KMs Driven</span>
-                    <span class="vehiconval">2020</span>
+                    <span class="vehiconval"><?php echo $value['vec_distance'];?></span>
                 </div>
             </div>
 
@@ -94,15 +97,15 @@
                 <i class="fa-solid fa-bolt fa-2xl"></i>
                 <div class="vehiconlist">
                     <span class="vehiconhead">CC</span>
-                    <span class="vehiconval">2020</span>
+                    <span class="vehiconval"><?php echo $value['vec_engine'];?></span>
                 </div>
             </div>
             </div>
             <div class="vehdesc">
                 <h2>Description</h2>
-                <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, voluptatum est! Totam quam necessitatibus quo ab repellat dolorem, provident cum obcaecati sapiente. Quia atque dignissimos possimus, eius illo distinctio quod rem laborum architecto vitae natus et ratione. Optio ipsa commodi libero? Doloremque earum deleniti architecto omnis officiis vitae, quae repellendus.</span>
+                <span><?php echo $value['description'];?></span>
             </div>
         </div>
     </div>
-
+    <?php } ?>
 </section>
