@@ -42,7 +42,7 @@
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
                 <span class="price"><?php echo $value['vec_price'];?></span>
 
-                <a href="#" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -81,7 +81,7 @@
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
                 <span class="price"><?php echo $value['vec_price'];?></span>
 
-                <a href="#" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -116,7 +116,7 @@
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
                 <span class="price"><?php echo $value['vec_price'];?></span>
 
-                <a href="#" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -151,7 +151,7 @@
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
                 <span class="price"><?php echo $value['vec_price'];?></span>
 
-                <a href="#" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
             </div>
         </div>
