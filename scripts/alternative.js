@@ -70,3 +70,10 @@ function showSlides(na) {
     dots[PropslideIndex - 1].className += " active";
     captionText.innerHTML = dots[PropslideIndex - 1].alt;
 }
+
+// like button
+$(function () {
+    $(".likebtn").click(function () {
+        $(".likebtn,.likemsg").toggleClass("press", 4000);
+    });
+});

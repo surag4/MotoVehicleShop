@@ -1047,6 +1047,108 @@ border-radius: 3px 0 0 3px;
 
 /* property images viewer end */
 
+/* like button */
+.shortlist {
+  margin:0 auto;
+  width: 70%;
+  text-align:right;
+  background:#ddd;
+  height:100%;
+}
+
+.like {
+  margin:0 auto;
+  position: relative;
+}
+
+.likebtn {
+  cursor:pointer;
+  padding:10px 12px 8px;
+  background:#fff;
+  border-radius:50%;
+  display:inline-block;
+  margin:0 0 15px;
+  color:#aaa;
+  transition:.2s;
+}
+
+.likebtn:hover {
+  color:#666;
+}
+
+.likebtn:before {
+  font-family:fontawesome;
+  content:'\f004';
+  font-style:normal;
+}
+
+.likemsg {
+  position: absolute;
+  bottom:20px;
+  left:0;
+  right:0;
+  visibility: hidden;
+  transition:.6s;
+  z-index:-2;
+  font-size:2px;
+  color:transparent;
+  font-weight:400;
+}
+
+.likebtn.press {
+  animation: size .4s;
+  color:#e23b3b;
+}
+
+.likemsg.press {
+  bottom:50px;
+  font-size:1.5rem;
+  visibility:visible;
+  animation: fade 1s;
+}
+
+@keyframes fade {
+  0% {color: #fff;}
+  50% {color: #e23b3b;}
+}
+
+@keyframes size {
+  0% {padding:10px 12px 8px;}
+  50% {padding:14px 16px 12px;  
+    margin-top:-4px;}
+  100% {padding:10px 12px 8px;}
+}
+
+.vehicledesc {
+  margin: 0 auto;
+  width: 70%;
+}
+
+.vecicnlst {
+  display: grid;
+  grid-template-areas: "a a a";
+  margin: 0.5rem 0 1.5rem 0;
+}
+
+.vehicon {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.vehiconlist {
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem;
+  font-size: 1rem;
+}
+
+.vehiconval {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+/* view vehicle end */
+
 /* footer */
 footer {
   margin-top: 3rem;
