@@ -108,7 +108,7 @@ function findAllVec(){
 
 function findVec($val){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN users ON users.userID = vehicle.userID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE vehicle.vehicleID='.$val.';');
+    $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN users ON users.userID = vehicle.userID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE vehicle.vehicleID='.$val.';');
     $stmt->execute();
     return $stmt;
 }
