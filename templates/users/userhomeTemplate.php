@@ -19,36 +19,37 @@
     <div class="slides">
         <?php  
             foreach ($trendScooter as $value) {
-                $pidjs = $value['vec_id'];
+                $pidjs = $value['vehicleID'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
-                <img src="../images/<?php echo $pidjs?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
+                <img src="../images/<?php echo $pidjss?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
             </div>
 
             <div class="details">
                 <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-                <span class="name"><?php echo $value['vec_name'];?></span>
+                <span class="name"><?php echo $value['modelName'];?></span>
 
                 <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-                <span class="distTravelled"><?php echo $value['vec_distance'];?></span>
+                <span class="distTravelled"><?php echo $value['distanceTravelled'];?></span>
 
                 <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-                <span class="located"><?php echo $value['vec_location'];?></span>
+                <span class="located"><?php echo $value['locationRegistered'];?></span>
                     
                 <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-                <span class="cc"><?php echo $value['vec_engine'];?> CC</span>
+                <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['vec_price'];?></span>
+                <span class="price"><?php echo $value['price'];?></span>
 
-                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vec_id'];?>&ermsg=0" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
 
         <div class="viewmore" style="background: #78787f;">
-            <i class="fas fa-arrow-right"></i>
+            <span>View All Scooters</span>
+            <i class="fas fa-square-caret-right"></i>
         </div>
     </div>
 </section>
@@ -58,7 +59,7 @@
     <div class="slides">
         <?php  
             foreach ($trendBike as $value) {
-                $pidjss = $value['vec_id'];
+                $pidjss = $value['vehicleID'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
@@ -67,21 +68,21 @@
 
             <div class="details">
                 <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-                <span class="name"><?php echo $value['vec_name'];?></span>
+                <span class="name"><?php echo $value['modelName'];?></span>
 
                 <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-                <span class="distTravelled"><?php echo $value['vec_distance'];?></span>
+                <span class="distTravelled"><?php echo $value['distanceTravelled'];?></span>
 
                 <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-                <span class="located"><?php echo $value['vec_location'];?></span>
+                <span class="located"><?php echo $value['locationRegistered'];?></span>
                     
                 <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-                <span class="cc"><?php echo $value['vec_engine'];?> CC</span>
+                <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['vec_price'];?></span>
+                <span class="price"><?php echo $value['price'];?></span>
 
-                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vec_id'];?>&ermsg=0" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -93,30 +94,30 @@
     <div class="slides">
         <?php  
             foreach ($popular as $value) {
-                $pidjsss = $value['vec_id'];
+                $pidjsss = $value['vehicleID'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
-                <img src="../images/<?php echo $pidjsss?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
+                <img src="../images/<?php echo $pidjss?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
             </div>
 
             <div class="details">
                 <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-                <span class="name"><?php echo $value['vec_name'];?></span>
+                <span class="name"><?php echo $value['modelName'];?></span>
 
                 <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-                <span class="distTravelled"><?php echo $value['vec_distance'];?></span>
+                <span class="distTravelled"><?php echo $value['distanceTravelled'];?></span>
 
                 <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-                <span class="located"><?php echo $value['vec_location'];?></span>
+                <span class="located"><?php echo $value['locationRegistered'];?></span>
                     
                 <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-                <span class="cc"><?php echo $value['vec_engine'];?> CC</span>
+                <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['vec_price'];?></span>
+                <span class="price"><?php echo $value['price'];?></span>
 
-                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vec_id'];?>&ermsg=0" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
         </div>
         <?php } ?>
@@ -126,7 +127,7 @@
 <section class="flashsale">
      <?php  
             foreach ($premiumSale as $value) {
-                $pidjsss = $value['vec_id'];
+                $pidjsss = $value['vehicleID'];
         ?>
         <div class="sale">
         <div class="vehicle">
@@ -137,21 +138,21 @@
     
                 <div class="details">
                 <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-                <span class="name"><?php echo $value['vec_name'];?></span>
+                <span class="name"><?php echo $value['modelName'];?></span>
 
                 <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-                <span class="distTravelled"><?php echo $value['vec_distance'];?></span>
+                <span class="distTravelled"><?php echo $value['distanceTravelled'];?></span>
 
                 <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-                <span class="located"><?php echo $value['vec_location'];?></span>
+                <span class="located"><?php echo $value['locationRegistered'];?></span>
                     
                 <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-                <span class="cc"><?php echo $value['vec_engine'];?> CC</span>
+                <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['vec_price'];?></span>
+                <span class="price"><?php echo $value['price'];?></span>
 
-                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vec_id'];?>&ermsg=0" class="getvechicledetails"> Details </a>
+                <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
             </div>
         </div>
