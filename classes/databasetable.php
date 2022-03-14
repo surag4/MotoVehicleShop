@@ -47,7 +47,7 @@ function update($record, $pk) {//update the record
 //find function
 function find($field, $value) {//passed as array
     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' WHERE ' . $field . ' = :valu');//prepare the value
         $criteria = [
                 'valu' => $value//passed as criteria
         ];
@@ -100,7 +100,7 @@ function delete($field, $value) {//passed as array
 
 function findAllVec(){
      global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID;');
     $stmt->execute();
     return $stmt;
 
@@ -133,6 +133,14 @@ function orderOnPremium(){
     $stmt->execute();
     return $stmt;
 }
+
+function findApprovals(){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID=type.modelID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE uploadStatus = 0; ');
+    $stmt->execute();
+    return $stmt;
+}
+
 
 function getlastVal($field) {//passed as array
     global $pdo;

@@ -1,6 +1,6 @@
 <?php 
 	$title = "Safari Express";
 	$conn = new DatabaseTable('vehicle');
-	$data=$conn->find("upload_status",0);
+	$data=$conn->findApprovals();
 	$content = loadTemplate('../templates/admin/approveTemplate.php', ["data"=>$data]);//load template 
 ?>
