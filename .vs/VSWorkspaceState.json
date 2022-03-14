@@ -1,14 +1,16 @@
 {
   "ExpandedNodes": [
     "",
-    "\\admin",
     "\\classes",
+    "\\images",
+    "\\images\\7",
     "\\pages",
+    "\\pages\\admin",
     "\\pages\\users",
     "\\public_html",
     "\\templates",
     "\\templates\\users"
   ],
-  "SelectedNode": "\\templates\\users\\userhomeTemplate.php",
+  "SelectedNode": "\\pages\\users\\login.php",
   "PreviewInSolutionExplorer": false
 }

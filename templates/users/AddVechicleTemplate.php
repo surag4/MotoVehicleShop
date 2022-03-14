@@ -1,5 +1,5 @@
 <section class="addVehicle">
-    <form action="index.php?page=AddVechicle" name="addvec" method="POST">
+    <form action="index.php?page=AddVechicle" name="addvec" method="POST" enctype="multipart/form-data">
         <div class="addVehicle-container">
             <h1>Add A Vechicle</h1>
             <p>Please fill in this form to start the process.</p>
@@ -41,7 +41,7 @@
              -->
             <div class="addvecbrand">
                 <label for="brand">Select a brand: </label>
-                <select name="brand" id="brand" onchange="modellist(this.options[this.selectedIndex].value);">
+                <select name="vec_brand" id="brand" onchange="modellist(this.options[this.selectedIndex].value);">
                     <option value="">Select Brand</option>
                     <?php 
                     foreach ($brandlist as $value) {
@@ -58,7 +58,7 @@
                         document.write('<select name="model"><option value="">Select Model</option></select>')
                     </script>
                     <noscript>
-                        <select name="model" id="model" >
+                        <select name="vec_model" id="model" >
                             <option value="">Select Model</option>
                         </select>
                     </noscript>
@@ -66,22 +66,23 @@
             </div>
 
             <input type="hidden" name="upload_status" value="0">
-            <input type="hidden" name="views" value="0">
             <input type="hidden" name="vec_upload_date" value=<?php echo date('d-m-y');?>>
 
             <label>Description</label>
             <textarea name="description" rows="4" cols="50"></textarea>
             
-            <input type="hidden" name="userID" value="1">
+             <div class="vehicle-pictures">
+                <label>Add a picture:</label>
+                <input type="file" name="fileToUpload[]" id="fileToUpload" multiple required>
+        </div>
+
+            <input type="hidden" name="custID" value="<?php echo $_SESSION['userID']; ?>">
             <div class="registerbtns">
                 <input type="submit" name="submit" value="Submit">
             </div>
         </div>
 
-        <div class="vehicle-pictures">
-                <label>Add a picture:</label>
-                <input type="file" name="fileToUpload" id="fileToUpload" required>
-        </div>
+       
     </form> 
 </section>
 
