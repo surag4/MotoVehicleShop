@@ -1,9 +1,10 @@
 <?php
 	$title = "Safari Express";
 	$conn = new DatabaseTable('vehicle');
-	$trendScooter=$conn->orderOnVehicleType('Scooter');
-	$trendBike=$conn->orderOnVehicleType('Bike');
-	$popular=$conn->orderOn('price');
+	$limit=7;
+	$trendScooter=$conn->orderOnVehicleType('Scooter',$limit);
+	$trendBike=$conn->orderOnVehicleType('Bike',$limit);
+	$popular=$conn->orderOn('price',$limit);
 	$premiumSale=$conn->orderOnPremium();
 	
 	if(isset($_POST['book_prop'])){
