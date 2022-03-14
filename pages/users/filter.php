@@ -44,5 +44,5 @@
 	$brands=$conn_brand->brandmodel();
     $brandlist=$conn_brand->findAll('manufacturer');
 
-	$content = loadTemplate('../templates/users/searchTemplate.php', ['brands'=>$brands,'brandlist'=>$brandlist]);//load template
+	$content = loadTemplate('../templates/users/searchTemplate.php', ['brands'=>$brands,'brandlist'=>$brandlist,'viewResults'=>$viewResults]);//load template
 ?>

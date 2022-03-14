@@ -54,7 +54,7 @@
       <div class="filterBrand">
           <p  class="filtersubhead">Brand</p>
           <select name="brand" id="brand" onchange="modellist(this.options[this.selectedIndex].value);">
-            <option value="nil">Select Brand</option>
+            <option value="*">Select Brand</option>
             <?php 
               foreach ($brandlist as $value) {
                 echo '<option value="'.$value['brandName'].'">'.$value['brandName'].'</option>';
@@ -67,11 +67,11 @@
           <p class="filtersubhead">Model</p>
           <div class="modellist">
               <script type="text/javascript" language="JavaScript">
-                  document.write('<select name="model"><option value="">Select Model</option></select>')
+                  document.write('<select name="model"><option value="*">Select Model</option></select>')
               </script>
               <noscript>
                   <select name="model" id="model" >
-                      <option value="">Select Model</option>
+                      <option value="*">Select Model</option>
                   </select>
               </noscript>
           </div>
@@ -92,7 +92,7 @@
   </section>
 
   <section class="filterResults">
-    <?php if (!isset($viewResults)) { echo "No Results Found."; } else { foreach ($viewResults as $value) { $vehID = $value['vehicleID']; ?>
+    <?php  foreach ($viewResults as $value) { $vehID = $value['vehicleID']; ?>
     <div class="filtervehicle">
       <div class="filter_thumbnail_images"> 
         <img src="../images/<?php echo $vehID;?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
@@ -117,7 +117,7 @@
         <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
       </div>
     </div>
-    <?php }} ?>
+    <?php } ?>
   </section>
 </article>
 
