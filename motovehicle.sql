@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2022 at 07:22 AM
+-- Generation Time: Mar 14, 2022 at 10:08 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.0.13
 
@@ -401,9 +401,7 @@ INSERT INTO `vehicle` (`vehicleID`, `modelID`, `modelYear`, `vehicleDescription`
 (1, 132, 1, 'It is a brand new not much used. It is still under warranty and free service coupon is also not used at all.', 20000, 'Bagmati', 50000, 4, '1st Owner', '2022-03-08', 1),
 (2, 122, 1, 'It has been used for 2 years, however it is still under warranty.', 35678, 'Narayani', 30000, 2, '2nd Owner', '2022-03-03', 1),
 (3, 55, 2020, 'As good as new. Regularly serviced. Well Maintained. Driven by 1 person the entire time. No issues. Still under warranty.', 123456, 'Bagmati', 275498, 4, '1st Owner', '2022-03-14', 1),
-(4, 8, 2022, 'Brand new. Regularly serviced. Well Maintained. Driven by 1 person the entire time. Less KMs. No issues. Still under warranty.', 1234, 'Bagmati', 250000, 1, '1st Owner', '2022-03-14', 1),
-(5, 8, 2022, 'Brand new. Regularly serviced. Well Maintained. Driven by 1 person the entire time. Less KMs. No issues. Still under warranty.', 1234, 'Bagmati', 250000, 1, '1st Owner', '2022-03-14', 1),
-(6, 129, 2020, 'oiuy', 123, 'ok', 1223, 4, '2nd Owner', '2022-03-14', 0);
+(4, 129, 2020, 'oiuy', 123, 'ok', 1223, 4, '2nd Owner', '2022-03-14', 1);
 
 -- --------------------------------------------------------
 
@@ -423,7 +421,7 @@ CREATE TABLE `vehiclecategory` (
 --
 
 INSERT INTO `vehiclecategory` (`categoryID`, `vehicleID`, `hitcount`, `category`) VALUES
-(1, 1, 6, 'premium'),
+(1, 1, 7, 'premium'),
 (2, 2, 4, 'premium'),
 (3, 3, 3, 'premium'),
 (4, 4, 0, 'normal');
@@ -523,7 +521,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `vehicleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `vehicleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `vehiclecategory`
