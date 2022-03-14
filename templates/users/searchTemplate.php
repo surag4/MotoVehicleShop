@@ -92,29 +92,29 @@
   </section>
 
   <section class="filterResults">
-    <?php for ($i=0; $i < 1; $i++) { ?>
+    <?php foreach ($viewResults as $value) { $vehID = $value['vehicleID']; ?>
     <div class="filtervehicle">
       <div class="filter_thumbnail_images"> 
-        <img src="../images/1/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
+        <img src="../images/<?php echo $vehID;?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
       </div>
 
       <div class="filter_details">
         <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-        <span class="name">Bajaj Pulsar 250</span>
+        <span class="name"><?php echo $value['modelName'];?></span>
 
         <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-        <span class="distTravelled">6000 km</span>
+        <span class="distTravelled"><?php echo $value['distanceTravelled'];?></span>
 
         <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-        <span class="located"> Kathmandu </span>
+        <span class="located"><?php echo $value['locationRegistered'];?></span>
             
         <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-        <span class="cc">125cc</span>
+        <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
         <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-        <span class="price">31000</span>
+        <span class="price"><?php echo $value['price'];?></span>
 
-        <a href="#" class="getvechicledetails"> Details </a>
+        <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
       </div>
     </div>
     <?php } ?>
