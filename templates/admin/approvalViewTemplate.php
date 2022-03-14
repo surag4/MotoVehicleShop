@@ -7,8 +7,8 @@
             foreach($data as $value){
             ?>
             <div class="approvalsubcont">
-                <label for="name">Vechicle Name</label>
-                <input type="text" name="vec_name" placeholder="Vechicle Name" value="<?php echo $value['vec_name'];?>" disabled>
+                <label for="name">Vechicle Model</label>
+                <input type="text" name="modelName" placeholder="Vechicle Name" value="<?php echo $value['modelName'];?>" disabled>
             </div>
 
             <div class="approvalsubcont"> 
@@ -52,8 +52,8 @@
             </div>
 
 
-             <input type="hidden" name="custID" value="<?php echo $value['custID'];?>">
-             <input type="hidden" name="vec_id" value="<?php echo $value['vec_id'];?>">
+             <input type="hidden" name="custID" value="<?php echo $value['userID'];?>">
+             <input type="hidden" name="vec_id" value="<?php echo $value['vehicleID'];?>">
              <?php } ?>
             <div class="registerbtns">
                 <input type="submit" class="signupbtn" name="approve" value="Approve">

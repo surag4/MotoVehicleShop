@@ -19,11 +19,11 @@
     <div class="slides">
         <?php  
             foreach ($trendScooter as $value) {
-                $pidjs = $value['vehicleID'];
+                $vidsc = $value['vehicleID'];
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
-                <img src="../images/<?php echo $pidjss?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
+                <img src="../images/<?php echo $vidsc?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
             </div>
 
             <div class="details">
