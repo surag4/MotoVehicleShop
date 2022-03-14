@@ -8,7 +8,7 @@
         <div class="searchbarProp">
             <form action="index.php?page=filter" method="post">
                 <input type="text" name="query" required>
-                <input type="submit" name="findproperty" value="Search">
+                <input type="submit" name="findvehicles" value="Search">
             </form>
         </div>
     </div>

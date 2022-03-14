@@ -2,17 +2,17 @@
   <section class="filterSelections">
     <h3> Filters </h3>
 
-    <form id="formname" name="formname" method="post" action="#" >
+    <form id="formname" name="formname" method="post" action="index.php?page=filter" >
       <div class="filterPrice">
         <p class="filtersubhead"> Price </p>
         <div class="price-input">
           <div class="price-inputbox">
-            <input type="number" class="input-min" min="0" max="900000" value="100000">
+            <input type="number" class="input-min" name="minprice" min="0" max="900000" value="100000">
           </div>
 
           <div class="separator">-</div>
             <div class="price-inputbox">
-              <input type="number" class="input-max" min="50000" max="1000000" value="750000">
+              <input type="number" class="input-max" name="maxprice" min="50000" max="1000000" value="750000">
             </div>
           </div>
 
@@ -21,8 +21,8 @@
           </div>
 
           <div class="range-inputbox">
-            <input type="range" class="pricerange-min" min="0" max="900000" value="100000" step="10000">
-            <input type="range" class="pricerange-max" min="50000" max="1000000" value="750000" step="10000">
+            <input type="range" class="pricerange-min" name="minprice" min="0" max="900000" value="100000" step="10000">
+            <input type="range" class="pricerange-max" name="maxprice" min="50000" max="1000000" value="750000" step="10000">
           </div>
         </div>
       </div>
@@ -31,30 +31,30 @@
         <p class="filtersubhead"> Kilometer Driven </p>
         <div class="distcont">
           <span>From</span>
-          <input type="number" name="km" id="filterdist">
+          <input type="number" name="mindistanceTravelled" value="0" id="filterdist">
           <span>to</span>
-          <input type="number" name="km" id="filterdist">
+          <input type="number" name="maxdistanceTravelled" value="10000" id="filterdist">
         </div>
       </div>
 
       <div class="filterCC">
         <fieldset>      
           <legend class="filtersubhead"> Engine Displacement (CC)</legend>        
-          <label> <input type="checkbox" name="cc" value="100to110"> 100cc - 110cc </label> <br>
-          <label> <input type="checkbox" name="cc" value="110to125"> 110cc - 125cc </label> <br>              
-          <label> <input type="checkbox" name="cc" value="125to150"> 125cc - 150cc </label> <br> 
-          <label> <input type="checkbox" name="cc" value="150to200"> 150cc - 200cc </label> <br>
-          <label> <input type="checkbox" name="cc" value="200to300"> 200cc - 300cc </label> <br> 
-          <label> <input type="checkbox" name="cc" value="300to500"> 300cc - 500cc </label> <br>  
-          <label> <input type="checkbox" name="cc" value="500to1000"> 500cc - 1000cc </label> <br> 
-          <label> <input type="checkbox" name="cc" value="1000above"> 1000cc - Above </label> <br>               
+          <label> <input type="radio" name="cc" value="100 AND 110"> 100cc - 110cc </label> <br>
+          <label> <input type="radio" name="cc" value="110 AND 125"> 110cc - 125cc </label> <br>              
+          <label> <input type="radio" name="cc" value="125 AND 150"> 125cc - 150cc </label> <br> 
+          <label> <input type="radio" name="cc" value="150 AND 200"> 150cc - 200cc </label> <br>
+          <label> <input type="radio" name="cc" value="200 AND 300"> 200cc - 300cc </label> <br> 
+          <label> <input type="radio" name="cc" value="300 AND 500"> 300cc - 500cc </label> <br>  
+          <label> <input type="radio" name="cc" value="500 AND 1000"> 500cc - 1000cc </label> <br> 
+          <label> <input type="radio" name="cc" value="1000 AND 15000"> 1000cc - Above </label> <br>               
         </fieldset>    
       </div>
       
       <div class="filterBrand">
           <p  class="filtersubhead">Brand</p>
           <select name="brand" id="brand" onchange="modellist(this.options[this.selectedIndex].value);">
-            <option value="">Select Brand</option>
+            <option value="nil">Select Brand</option>
             <?php 
               foreach ($brandlist as $value) {
                 echo '<option value="'.$value['brandName'].'">'.$value['brandName'].'</option>';
@@ -81,18 +81,18 @@
           <p class="filtersubhead">Model Year</p>
           <div class="yearcont">
           <span>From</span>
-          <input type="number" name="year" min="2010" max="2021" id="filteryear">
+          <input type="number" name="minyear" value="2010" min="2010" max="2021" id="filteryear">
           <span>to</span>
-          <input type="number" name="year" min="2011" max="2022" id="filteryear">
+          <input type="number" name="maxyear" value="2022" min="2011" max="2022" id="filteryear">
         </div>
       </div>
 
-      <input type="submit" value="Filter Results">
+      <input type="submit" name="filtervehicles" value="Filter Results">
     </form>
   </section>
 
   <section class="filterResults">
-    <?php foreach ($viewResults as $value) { $vehID = $value['vehicleID']; ?>
+    <?php if (!isset($viewResults)) { echo "No Results Found."; } else { foreach ($viewResults as $value) { $vehID = $value['vehicleID']; ?>
     <div class="filtervehicle">
       <div class="filter_thumbnail_images"> 
         <img src="../images/<?php echo $vehID;?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
@@ -117,7 +117,7 @@
         <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
       </div>
     </div>
-    <?php } ?>
+    <?php }} ?>
   </section>
 </article>
 
