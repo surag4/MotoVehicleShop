@@ -23,7 +23,7 @@
         ?>
         <div class="vehicle">
             <div class="thumbnail_images"> 
-                <img src="../images/<?php echo $vidsc?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
+                <img src="../images/<?php echo $vidsc;?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
             </div>
 
             <div class="details">
@@ -48,8 +48,10 @@
         <?php } ?>
 
         <div class="viewmore" style="background: #78787f;">
-            <span>View All Scooters</span>
-            <i class="fas fa-square-caret-right"></i>
+            <form action="index.php?page=filter" method="post">
+                <input type="submit" name="trendScooter" value="View All Scooters">
+                <i class="fas fa-square-caret-right"></i> 
+            </form>
         </div>
     </div>
 </section>
@@ -86,6 +88,13 @@
             </div>
         </div>
         <?php } ?>
+
+        <div class="viewmore" style="background: #78787f;">
+            <form action="index.php?page=filter" method="post">
+                <input type="submit" name="trendBike" value="View All Bikes">
+                <i class="fas fa-square-caret-right"></i> 
+            </form>
+        </div>
     </div>
 </section>
 
@@ -102,7 +111,6 @@
             </div>
 
             <div class="details">
-                <span><?php echo $popvid;?></span>
                 <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
                 <span class="name"><?php echo $value['modelName'];?></span>
 
@@ -122,6 +130,13 @@
             </div>
         </div>
         <?php } ?>
+
+        <div class="viewmore" style="background: #78787f;">
+            <form action="index.php?page=filter" method="post">
+                <input type="submit" name="popular" value="View All Vehicles">
+                <i class="fas fa-square-caret-right"></i> 
+            </form>
+        </div>
     </div>
 </section>
 
