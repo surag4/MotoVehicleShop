@@ -61,5 +61,8 @@
             <span>&#169 2022 Safari Express | All Rights Reserved.</span>
         </section>
     </footer>
+
+    <script src="../scripts/lightbox-plus-jquery.min.js"></script> <!-- file retrived from: https://lokeshdhakar.com/projects/lightbox2/ -->
+    <script src="../scripts/alternative.js"></script>
 </body>
 </html>
