@@ -1,7 +1,7 @@
 <?php 
 	$title = "Safari Express";
 	$data=[];
-	$conn = new DatabaseTable('properties');
+	$conn = new DatabaseTable('vehicle');
 	if(isset($_GET['vid'])){
 		$data=$conn->find("vec_id",$_GET['vid']);
 	}

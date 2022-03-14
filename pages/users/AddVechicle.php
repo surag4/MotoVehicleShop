@@ -3,13 +3,13 @@
 	$conn_brand = new DatabaseTable('manufacturer');
 	$brands=$conn_brand->brandmodel();
     $brandlist=$conn_brand->findAll('manufacturer');
-	$connToInsert = new DatabaseTable('properties');
+	$connToInsert = new DatabaseTable('vehicle');
 	if(isset($_POST['submit'])){
 	unset($_POST['submit']);
 	$connToInsert-> insert($_POST);
 		/*  IMAGE UPLOAD    */
-			$getVal= new DatabaseTable('properties');
-			$valu=$getVal->getlastVal('vec_id');
+			$getVal= new DatabaseTable('vehicle');
+			$valu=$getVal->getlastVal('vehicleID');
 			$nextVal=0;
 			foreach($valu as $value){
 				$nextVal = $value[0];

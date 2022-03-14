@@ -6,7 +6,7 @@
             $connUd = new DatabaseTable('users');
             $userdetails=$connUd->find('user_id',$_GET['uid']);
         }
-        $conn= new DatabaseTable('properties');
+        $conn= new DatabaseTable('vehicle');
         if(isset($_GET['uid'])){
         $findAllBook=$conn->booking($_GET['uid']);
         }

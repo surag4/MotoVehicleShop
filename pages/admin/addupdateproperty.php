@@ -6,13 +6,13 @@
 		
 
 		if(isset($_POST['val_insert'])){
-			$conn = new DatabaseTable('properties');
+			$conn = new DatabaseTable('vehicle');
 			unset($_POST['prop_id']);
 			unset($_POST['val_insert']);
 			$conn->insert($_POST);
 
 			/*  IMAGE UPLOAD    */
-			$getVal= new DatabaseTable('properties');
+			$getVal= new DatabaseTable('vehicle');
 			$valu=$getVal->getlastVal('prop_id');
 			$nextVal=0;
 			foreach($valu as $value){
@@ -58,14 +58,14 @@
 		}
 		
 		if(isset($_POST['val_update'])){
-			$conn = new DatabaseTable('properties');
+			$conn = new DatabaseTable('vehicle');
 			unset($_POST['val_update']);
 			$conn->update($_POST,'prop_id');
 			header('Location:index.php?page=manageproperty');
 		}
 
 		if(isset($_GET['pid'])){
-			$conn = new DatabaseTable('properties');
+			$conn = new DatabaseTable('vehicle');
 			$dataa=$conn->find('prop_id',$_GET['pid']);
 			$data=$dataa->fetch();
 		}

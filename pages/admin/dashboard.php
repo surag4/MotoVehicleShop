@@ -1,10 +1,10 @@
 <?php 
 	$title = "Safari Express";
-	$conn = new DatabaseTable('properties');
+	$conn = new DatabaseTable('vehicle');
 	$allVec=$conn->findAllVec();
 
 	if(isset($_GET['vid'])){
-	$conn2 = new DatabaseTable('vehicle_category');
+	$conn2 = new DatabaseTable('vehiclecategory');
 
 	$val = array(
 			"vec_id"=>$_GET['vid'],
@@ -19,7 +19,7 @@
 	}
 
 	if(isset($_GET['rvid'])){
-	$conn2 = new DatabaseTable('vehicle_category');
+	$conn2 = new DatabaseTable('vehiclecategory');
 
 	$val = array(
 			"vec_id"=>$_GET['vid'],
