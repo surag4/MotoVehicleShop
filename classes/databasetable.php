@@ -113,6 +113,13 @@ function findVec($val){
     return $stmt;
 }
 
+function findapprovalVec($val){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE vehicleID='.$val.';');
+    $stmt->execute();
+    return $stmt;
+}
+
 function orderOn($parameter){
     global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID ORDER BY '.$parameter.' DESC LIMIT 7;');
