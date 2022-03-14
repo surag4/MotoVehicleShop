@@ -157,7 +157,7 @@ function searchResults($input){
 
 function filterResults($minprice, $maxprice,$mindist, $maxdist,$cc,$minyear,$maxyear,$brand,$model){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM vehicle JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE (vehicle.price BETWEEN '.$minprice.' AND '.$maxprice.') OR (vehicle.distanceTravelled BETWEEN '.$mindist.' AND '.$maxdist.') OR (type.cubicCapacity BETWEEN '.$cc.') OR (vehicle.modelYear BETWEEN '.$minyear.' AND '.$maxyear.') OR (manufacturer.brandName LIKE "%'.$brand.'%") OR (type.modelName LIKE "%'.$model.'%")');
+    $stmt = $pdo->prepare('SELECT * FROM vehicle JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE (manufacturer.brandName LIKE "%'.$brand.'%") OR (type.modelName LIKE "%'.$model.'%") OR (vehicle.price BETWEEN '.$minprice.' AND '.$maxprice.') OR (vehicle.distanceTravelled BETWEEN '.$mindist.' AND '.$maxdist.') OR (type.cubicCapacity BETWEEN '.$cc.') OR (vehicle.modelYear BETWEEN '.$minyear.' AND '.$maxyear.')');
     $stmt->execute();
     return $stmt;
 }
