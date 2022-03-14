@@ -92,6 +92,39 @@
 
             <input type="hidden" name="vehicleID" value="<?php echo $value['vehicleID'];?> ">
 
+            <div class="property_pictures">
+                <?php
+                    $pid =$value['vehicleID'];
+                    $model = $value['modelName'];
+                    $counterII=1;
+                    $dire2 = "../images/BillBook/".$pid;
+                    $images2 = glob($dire2 . "/*");
+                    foreach($images2 as $tasbir2){ 
+                ?>
+                    <div class="prop_picture_cont">
+                        <div class="numbertext"><?php echo $counterII; $counterII++; echo ' / '.count($images2).'';?></div>
+                        <a target="_self" href="<?php echo $tasbir2?>" data-lightbox="mygallery" data-title="<?php echo $model;?>">
+                        <img src="<?php echo $tasbir2;?>">
+                        </a>
+                    </div>
+                <?php } ?>    
+
+                <a class="prev" onclick="propViewerSlides(-1)">❮</a>
+                <a class="next" onclick="propViewerSlides(1)">❯</a>
+
+                <div class="caption-container">
+                    <p id="caption"></p>
+                </div>
+
+                <div class="property_pictures_row">
+                    <?php $counterII=1; foreach ($images2 as $img2) { ?> 
+                        <div class="property_pictures_column">
+                        <img class="demo cursor" src="<?php echo $img2;?>" style="width:100%" onclick="currentPropViewSlide(<?php echo $counterII; $counterII++?>)" alt="<?php echo $model;?>">
+                </div>
+                <?php } ?>
+        
+            </div>
+
             <?php } ?>
 
             <div class="registerbtns">

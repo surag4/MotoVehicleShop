@@ -66,8 +66,13 @@
       </div>
 
       <div class="vehicle-pictures">
-        <label>Add a picture:</label>
+        <label>Add picture of Vechicle (Multiple Photos):</label>
         <input type="file" name="fileToUpload[]" id="fileToUpload" multiple required>
+      </div>
+
+      <div class="vehicle-pictures">
+        <label>Add picture Bill Book (Both Front and Back)</label>
+        <input type="file" name="billBookFileToUpload[]" id="fileToUpload" multiple required>
       </div>
 
       <input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
