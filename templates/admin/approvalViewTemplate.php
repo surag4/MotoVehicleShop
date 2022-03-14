@@ -8,7 +8,12 @@
             ?>
             <div class="approvalsubcont">
                 <label for="name">Vechicle Model</label>
-                <input type="text" name="modelName" placeholder="Vechicle Name" value="<?php echo $value['modelName'];?>" disabled>
+                <input type="text" name="modelName" placeholder="Vechicle Model" value="<?php echo $value['modelName'];?>" disabled>
+            </div>
+
+            <div class="approvalsubcont">
+                <label for="name">Model Year</label>
+                <input type="text" name="modelName" placeholder="Model Year" value="<?php echo $value['modelYear'];?>" disabled>
             </div>
 
             <div class="approvalsubcont"> 
@@ -51,8 +56,10 @@
                 <input type="text" placeholder="Vechicle Upload Date" name="vehiclePostDate" value="<?php echo $value['vehiclePostDate'];?>" disabled>
             </div>
 
+            <input type="hidden" name="vehicleID" value="<?php echo $value['vehicleID'];?> ">
+
             <?php } ?>
-            
+
             <div class="registerbtns">
                 <input type="submit" class="signupbtn" name="approve" value="Approve">
                 <input type="submit" class="signupbtn" name="discard" value="Discard">

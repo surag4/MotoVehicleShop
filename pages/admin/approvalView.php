@@ -5,7 +5,7 @@
 	$vehicle_id=0;
 	if(isset($_GET['vid'])){
         $vehicle_id=$_GET['vid'];
-		$data=$conn->findVec($vehicle_id);
+		$data=$conn->findapprovalVec($vehicle_id);
 	}
 
 	if(isset($_POST['approve'])){
@@ -13,7 +13,7 @@
 		//$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
 
 		$val = array(
-			"vehicleID"=>$vehicle_id,
+			"vehicleID"=>$_POST['vehicleID'],
 			"hitcount"=>"0",
 			"category"=>"normal"
 		);
@@ -22,7 +22,7 @@
 
 		$val2 = array(
 			"uploadStatus"=>1,
-			"vehicleID"=>$vehicle_id
+			"vehicleID"=>$_POST['vehicleID']
 		);
 
 		$conn->update($val2,"vehicleID");
