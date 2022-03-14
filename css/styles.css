@@ -890,7 +890,6 @@ input[type="number"]::-webkit-inner-spin-button {
   display: grid;
   grid-template-areas: "a b";
   grid-auto-columns: 10rem auto;
-  grid-template-rows: 2rem;
   gap: 1rem;
   justify-content: left;
   align-items: center;
@@ -899,6 +898,13 @@ input[type="number"]::-webkit-inner-spin-button {
 .addVehicle-container input, .addVehicle-container select{
   width: 25rem;
   padding: 0.5rem;
+}
+
+.vecdesc textarea {
+  width: 25rem;
+  height: 7rem;
+  padding: 0.5rem;
+  resize: none;
 }
 
 /* VIEW VECHILES DETAILS */
@@ -1146,6 +1152,14 @@ border-radius: 3px 0 0 3px;
 .vehiconval {
   font-size: 1.2rem;
   font-weight: 600;
+}
+
+.viewmore span {
+  margin-right: 1rem;
+}
+
+.viewmore i {
+  font-size: 1.5rem;
 }
 /* view vehicle end */
 

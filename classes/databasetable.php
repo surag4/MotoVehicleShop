@@ -82,7 +82,7 @@ function gettingChat($person1,$person2){
 
 function updateHitPoint($id){
     global $pdo;
-    $stmt = $pdo->prepare('UPDATE vehicle_category SET hitcount = hitcount + 1 WHERE vec_id ='.$id.';');
+    $stmt = $pdo->prepare('UPDATE vehiclecategory SET hitcount = hitcount + 1 WHERE vehicleId ='.$id.';');
     $stmt->execute();
     return $stmt;
 }
@@ -98,27 +98,9 @@ function delete($field, $value) {//passed as array
         return $stmt;
 }
 
-function orderOn($givenid){
-    global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id ORDER BY '.$givenid.' DESC LIMIT 7;');
-    $stmt->execute();
-    return $stmt;
-}
-
-function orderOnScooter($givenid){
-    global $pdo;
-    $stmt = $pdo->prepare('SELECT *
-FROM properties
-INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
-WHERE properties.type="Scooter" 
-ORDER BY vehicle_category.hitcount DESC;');
-    $stmt->execute();
-    return $stmt;
-}
-
 function findAllVec(){
      global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID;');
     $stmt->execute();
     return $stmt;
 
@@ -126,28 +108,28 @@ function findAllVec(){
 
 function findVec($val){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM properties INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id WHERE properties.vec_id='.$val.';');
+    $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN users ON users.userID = vehicle.userID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE vehicle.vehicleID='.$val.';');
     $stmt->execute();
     return $stmt;
 }
 
-function orderOnBike($givenid){
+function orderOn($parameter){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT *
-FROM properties
-INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
-WHERE properties.type="Bike" 
-ORDER BY vehicle_category.hitcount DESC;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID ORDER BY '.$parameter.' DESC LIMIT 7;');
+    $stmt->execute();
+    return $stmt;
+}
+
+function orderOnVehicleType($parameter){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE type.vehicleType="'.$parameter.'" ORDER BY vehiclecategory.hitcount DESC LIMIT 7;');
     $stmt->execute();
     return $stmt;
 }
 
 function orderOnPremium(){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT *
-FROM properties
-INNER JOIN vehicle_category ON properties.vec_id=vehicle_category.vec_id 
-WHERE vehicle_category.category="premium";');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE vehiclecategory.category="premium";');
     $stmt->execute();
     return $stmt;
 }
