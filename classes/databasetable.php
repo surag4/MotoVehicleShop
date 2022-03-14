@@ -120,16 +120,16 @@ function findapprovalVec($val){
     return $stmt;
 }
 
-function orderOn($parameter){
+function orderOn($parameter,$limit){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID ORDER BY '.$parameter.' DESC LIMIT 7;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID ORDER BY '.$parameter.' DESC LIMIT '.$limit.';');
     $stmt->execute();
     return $stmt;
 }
 
-function orderOnVehicleType($parameter){
+function orderOnVehicleType($parameter,$limit){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE type.vehicleType="'.$parameter.'" ORDER BY vehiclecategory.hitcount DESC LIMIT 7;');
+    $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE type.vehicleType="'.$parameter.'" ORDER BY vehiclecategory.hitcount DESC LIMIT '.$limit.';');
     $stmt->execute();
     return $stmt;
 }
