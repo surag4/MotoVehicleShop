@@ -20,8 +20,12 @@
     }
     $increase=$conn->updateHitPoint($vehicle_id);
 	$data=$conn->findVec($vehicle_id);
+    $shortlisted=[];
+    if($_SESSION['login']==1){
     $shortlisted=$conn->shortList($_SESSION['userID'],$vehicle_id);
     $shortlisted=$shortlisted->fetch();
+    }
+    
     $title="Vehicle Details";
     
 	$content = loadTemplate('../templates/users/vehicleTemplate.php', ["data"=>$data,"shortlisted"=>$shortlisted]);
