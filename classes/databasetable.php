@@ -162,19 +162,25 @@ function filterResults($minprice, $maxprice,$mindist, $maxdist,$cc,$minyear,$max
     return $stmt;
 }
 
+function flashSale($category){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM `vehiclecategory` JOIN vehicle ON vehiclecategory.vehicleID=vehicle.vehicleID JOIN type ON vehicle.modelID=type.modelID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE category="'.$category.'"; ');
+    $stmt->execute();
+    return $stmt;
+}
+
 function getlastVal($field) {//passed as array
     global $pdo;
-        $stmt = $pdo->prepare('SELECT MAX('.$field.') FROM '.$this->table);
-        $stmt->execute();//execute the criteria
-        return $stmt;
+    $stmt = $pdo->prepare('SELECT MAX('.$field.') FROM '.$this->table);
+    $stmt->execute();//execute the criteria
+    return $stmt;
 }
 
 function brandmodel() {
     global $pdo;
-        $stmt = $pdo->prepare('SELECT manufacturer.brandName, type.modelName, type.modelID, type.brandID FROM manufacturer INNER JOIN type ON manufacturer.brandID=type.brandID; ');
-        $stmt->execute();
-
-        return $stmt;
+    $stmt = $pdo->prepare('SELECT manufacturer.brandName, type.modelName, type.modelID, type.brandID FROM manufacturer INNER JOIN type ON manufacturer.brandID=type.brandID; ');
+    $stmt->execute();
+    return $stmt;
 }
 
 }
