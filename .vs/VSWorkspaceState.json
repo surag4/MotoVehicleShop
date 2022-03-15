@@ -1,7 +1,6 @@
 {
   "ExpandedNodes": [
     "",
-    "\\classes",
     "\\images",
     "\\images\\7",
     "\\pages",
@@ -9,8 +8,9 @@
     "\\pages\\users",
     "\\public_html",
     "\\templates",
+    "\\templates\\admin",
     "\\templates\\users"
   ],
-  "SelectedNode": "\\pages\\users\\login.php",
+  "SelectedNode": "\\images\\BillBook",
   "PreviewInSolutionExplorer": false
 }
