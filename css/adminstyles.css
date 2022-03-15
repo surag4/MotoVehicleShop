@@ -176,6 +176,61 @@ input[type=submit]:hover {
     background-color: #5345a0;
 }
 
+/* view vehicle page */
+.vehicledetails {
+	margin: 2rem 5%;
+	width: 90%;
+  }
+
+  .vehicledesc {
+	margin: 0 auto;
+	width: 70%;
+  }
+  
+  .vecicnlst {
+	display: grid;
+	grid-template-areas: "a a a";
+	margin: 0.5rem 0 1.5rem 0;
+  }
+  
+  .vehicon {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+  }
+  
+  .vehiconlist {
+	display: flex;
+	flex-direction: column;
+	margin: 0.5rem;
+	font-size: 1rem;
+  }
+  
+  .vehiconval {
+	font-size: 1.2rem;
+	font-weight: 600;
+  }
+  
+  .viewmore input[type=submit] {
+	margin-right: 1rem;
+	background-color: #78787f;
+	color: #000;
+	font-size: 1.5rem;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+  }
+  
+  .viewmore i {
+	font-size: 1.5rem;
+  }
+  
+  .viewmore input[type=submit]:hover{
+	color: #0095FF;
+	text-decoration: underline;
+  }
+/* view vehicle page end*/
+
 /* approval page */
 
 /* property images viewer start */
@@ -315,10 +370,8 @@ input[type=submit]:hover {
 	to {opacity: 1}
   }
   
-  
   /* property images viewer end */
   
-
 .approval-container {
 	display: block;
 	width: 90%;

@@ -20,6 +20,7 @@
             <?php if(isset($_SESSION['login']) && $_SESSION['login'] == 1){ ?>
             <div class="links">
                 <a href="index.php?page=approve">Approve</a>
+                <a href="index.php?page=sale">Premium Sales</a>
             </div>
 
             <div class="login">

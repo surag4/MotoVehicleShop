@@ -18,7 +18,6 @@
 						mkdir('../images/'.$nextVal);
 						if( is_dir('../images/BillBook/'.$nextVal) === false ){
 								mkdir('../images/BillBook/'.$nextVal);
-
 						}	
 			}	
 			/* bill book upload*/
@@ -59,8 +58,6 @@
 		}
 			
 			/* end of script */	
-
-
 
 			$newfilenum = 1;
 			foreach($_FILES["fileToUpload"]["name"] as $key=>$val){
