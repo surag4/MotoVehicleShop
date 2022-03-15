@@ -42,8 +42,8 @@ foreach($data as $value){
                     
         <div class="shortlist">
             <div class="like">
-                <i class="likebtn"></i>
-                <span class="likemsg">short listed!</span>
+                <i class="<?php if($shortlisted){echo "likebtn press";}else{echo "likebtn";}?>"></i>
+                <span class="<?php if($shortlisted){echo "likemsg press";}else{echo "likemsg";}?>">short listed!</span>
             </div>
         </div>
 

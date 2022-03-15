@@ -7,11 +7,11 @@
 	$conn2 = new DatabaseTable('vehiclecategory');
 
 	$val = array(
-			"vec_id"=>$_GET['vid'],
+			"vehicleID"=>$_GET['vid'],
 			"category"=>"premium"
 		);
 
-		$conn2->update($val,"vec_id");
+		$conn2->update($val,"vehicleID");
 
 		header('location:index.php?page=dashboard');
 
@@ -22,11 +22,11 @@
 	$conn2 = new DatabaseTable('vehiclecategory');
 
 	$val = array(
-			"vec_id"=>$_GET['vid'],
+			"vehicleID"=>$_GET['rvid'],
 			"category"=>"normal"
 		);
 
-		$conn2->update($val,"vec_id");
+		$conn2->update($val,"vehicleID");
 
 		header('location:index.php?page=dashboard');
 

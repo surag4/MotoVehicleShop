@@ -119,7 +119,12 @@ function findapprovalVec($val){
     $stmt->execute();
     return $stmt;
 }
-
+function shortList($user,$vehicle){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM `shortlist` WHERE custID='.$user.' AND vehicleID='.$vehicle );
+    $stmt->execute();
+    return $stmt;
+}
 function orderOn($parameter,$limit){
     global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID ORDER BY '.$parameter.' DESC LIMIT '.$limit.';');
