@@ -8,15 +8,21 @@
         }
         
     }
-    if(isset($_GET['svid'])){
+    if(isset($_GET['shvid'])){
         $conn2= new DatabaseTable('shortlist');
         $val2 = array(
 			"custID"=>$_SESSION['userID'],
-			"vehicleID"=>$_GET['svid']
+			"vehicleID"=>$_GET['shvid']
 		);
+        $vehicle_id=$_GET['shvid'];
 
 		$conn2->insert($val2);
-		header('location:index.php?page=viewvehicle&vid='.$_GET['svid'].'&ermsg=0');
+		header('location:index.php?page=viewvehicle&vid='.$_GET['shvid'].'&ermsg=0');
+    }
+
+    if(isset($_GET['dshid'])){
+    $conn3 = new DatabaseTable('shortlist');
+    $del = $conn3->delete("shortlistid",$_GET['dshid']);
     }
     $increase=$conn->updateHitPoint($vehicle_id);
 	$data=$conn->findVec($vehicle_id);

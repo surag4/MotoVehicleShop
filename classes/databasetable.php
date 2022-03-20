@@ -132,6 +132,14 @@ function orderOn($parameter,$limit){
     return $stmt;
 }
 
+function getShortListed($user){
+global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM vehicle INNER JOIN shortlist ON vehicle.vehicleID=shortlist.vehicleID WHERE shortlist.custID='.$user.' ORDER BY shortlist.shortlistid DESC; ');
+    $stmt->execute();
+    return $stmt;
+//SELECT * FROM vehicle INNER JOIN shortlist ON vehicle.vehicleID=shortlist.vehicleID ORDER BY shortlist.shortlistid DESC; 
+}
+
 function orderOnVehicleType($parameter,$limit){
     global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID WHERE type.vehicleType="'.$parameter.'" ORDER BY vehiclecategory.hitcount DESC LIMIT '.$limit.';');

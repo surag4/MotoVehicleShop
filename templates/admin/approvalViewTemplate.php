@@ -91,6 +91,7 @@
             </div>
 
             <input type="hidden" name="vehicleID" value="<?php echo $value['vehicleID'];?> ">
+            <input type="hidden" name="userID" value="<?php echo $value['userID'];?> ">
 
             <div class="property_pictures">
                 <?php

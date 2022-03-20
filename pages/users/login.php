@@ -9,6 +9,7 @@
 		header('location:index.php?page=userhome');
 	}
 	$_SESSION["login"]=0;
+	$_SESSION["userID"]=0;
 	if(isset($_POST['login'])){
 		$bol=0;
 		foreach($data as $value){

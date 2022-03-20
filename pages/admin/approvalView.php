@@ -10,7 +10,6 @@
 
 	if(isset($_POST['approve'])){
 		$conn2 = new DatabaseTable('vehiclecategory');
-		//$age = array("Peter"=>"35", "Ben"=>"37", "Joe"=>"43");
 
 		$val = array(
 			"vehicleID"=>$_POST['vehicleID'],
@@ -19,6 +18,16 @@
 		);
 
 		$conn2->insert($val);
+		$conn3 = new DatabaseTable('notification');
+
+		$val = array(
+			"notif_title"=>"Vehicle Approved",
+			"notif_msg"=>"Your upload request has been approved. Please click here to view.",
+			"userID"=>$_POST['userID'],
+			"vehicleID"=>$_POST['vehicleID']
+		);
+
+		$conn3->insert($val);
 
 		$val2 = array(
 			"uploadStatus"=>1,
@@ -31,6 +40,16 @@
 
 	if(isset($_POST['discard'])){
 		$conn->delete("vehicleID", $_POST['vehicleID']);
+		$conn3 = new DatabaseTable('notification');
+
+		$val = array(
+			"notif_title"=>"Approval Denied",
+			"notif_msg"=>"Your upload request has been discarded. Please try again with valid information.",
+			"userID"=>$_POST['userID'],
+			"vehicleID"=>$_POST['vehicleID']
+		);
+
+		$conn3->insert($val);
 	}
 
 	if(isset($_POST['cancel'])){

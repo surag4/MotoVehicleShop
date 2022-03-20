@@ -39,14 +39,24 @@ foreach($data as $value){
         
             </div>
         </div>
-                    
+        
+        <?php if($shortlisted && $_SESSION['login']!=0){
+        echo '<a href=index.php?page=viewvehicle&dshid='.$shortlisted['shortlistid'].'&vid='.$pid.'&ermsg=0>';
+       }
+        elseif(!$shortlisted && $_SESSION['login']!=0) {
+        echo '<a href=index.php?page=viewvehicle&shvid='.$pid.'&uid='.$_SESSION['userID'].'>';
+        }
+        else{
+            echo '<a href=index.php?page=login>';
+        }        
+        ?>
         <div class="shortlist">
             <div class="like">
-                <i class="<?php if($shortlisted){echo "likebtn press";}else{echo "likebtn";}?>"></i>
-                <span class="<?php if($shortlisted){echo "likemsg press";}else{echo "likemsg";}?>">short listed!</span>
+                <i class="<?php if($shortlisted && $_SESSION['login']!=0){echo "likebtn press";}else{echo "likebtn";}?>"></i>
+                <span class="<?php if($shortlisted && $_SESSION['login']!=0){echo "likemsg press";}else{echo "likemsg";}?>">short listed!</span>
             </div>
         </div>
-
+        <?php echo '</a>';?>
         <div class="vehicledesc">
             <div class="vehdeshead">
                 <h2>Over View</h2>
