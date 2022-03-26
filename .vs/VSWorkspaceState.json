@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\classes",
     "\\images",
-    "\\images\\7",
     "\\pages",
     "\\pages\\admin",
     "\\pages\\users",
@@ -11,6 +11,6 @@
     "\\templates\\admin",
     "\\templates\\users"
   ],
-  "SelectedNode": "\\images\\BillBook",
+  "SelectedNode": "\\pages\\admin\\approve.php",
   "PreviewInSolutionExplorer": false
 }

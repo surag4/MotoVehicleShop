@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> <?php echo $title; ?></title>
     <link rel="stylesheet" href="../css/styles.css">
+    <script type="text/javascript" src="../css/main.js"></script>
     <script src="../scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
 </head>

@@ -15,6 +15,5 @@ function hideNseek(evt, cityName) {
 
 
 function start(){
-//alert("Helloooo");
 }
 document.addEventListener('DOMContentLoaded', start);

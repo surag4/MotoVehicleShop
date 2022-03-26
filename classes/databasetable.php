@@ -113,6 +113,13 @@ function findVec($val){
     return $stmt;
 }
 
+function shortlistVecList($vec_id){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN users ON users.userID = vehicle.userID JOIN vehiclecategory ON vehicle.vehicleID = vehiclecategory.vehicleID JOIN manufacturer ON type.brandID=manufacturer.brandID JOIN shortlist ON vehicle.vehicleID = shortlist.vehicleID WHERE shortlist.custID='.$vec_id.';');
+    $stmt->execute();
+    return $stmt;
+}
+
 function findapprovalVec($val){
     global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM `vehicle` JOIN type ON vehicle.modelID = type.modelID JOIN manufacturer ON type.brandID=manufacturer.brandID WHERE vehicleID='.$val.';');

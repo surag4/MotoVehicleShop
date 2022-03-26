@@ -42,6 +42,9 @@ foreach($data as $value){
         
         <?php if($shortlisted && $_SESSION['login']!=0){
         echo '<a href=index.php?page=viewvehicle&dshid='.$shortlisted['shortlistid'].'&vid='.$pid.'&ermsg=0>';
+        if($buy==1){
+        echo '<a href=index.php?page=payment><button>BUY</button></a>';
+        } 
        }
         elseif(!$shortlisted && $_SESSION['login']!=0) {
         echo '<a href=index.php?page=viewvehicle&shvid='.$pid.'&uid='.$_SESSION['userID'].'>';

@@ -1,5 +1,6 @@
 <?php
     $vehicle_id=0;
+    $buy=0;
     $conn = new DatabaseTable('vehicle');
     if(isset($_GET['vid'])){
         $vehicle_id=$_GET['vid'];
@@ -7,6 +8,10 @@
             $ermsg=$_GET['ermsg'];
         }
         
+    }
+    if(isset($_GET['buy'])){
+     $vehicle_id=$_GET['buy'];
+     $buy=1;
     }
     if(isset($_GET['shvid'])){
         $conn2= new DatabaseTable('shortlist');
@@ -31,8 +36,11 @@
     $shortlisted=$conn->shortList($_SESSION['userID'],$vehicle_id);
     $shortlisted=$shortlisted->fetch();
     }
+
+
+    
     
     $title="Vehicle Details";
     
-	$content = loadTemplate('../templates/users/vehicleTemplate.php', ["data"=>$data,"shortlisted"=>$shortlisted]);
+	$content = loadTemplate('../templates/users/vehicleTemplate.php', ["data"=>$data,"shortlisted"=>$shortlisted,"buy"=>$buy]);
 ?>
