@@ -139,6 +139,15 @@ function orderOn($parameter,$limit){
     return $stmt;
 }
 
+function notifAll() {
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' ORDER BY notif_id DESC');//selects the value
+
+        $stmt->execute();//execute the value
+
+        return $stmt;
+}
+
 function getShortListed($user){
 global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM vehicle INNER JOIN shortlist ON vehicle.vehicleID=shortlist.vehicleID WHERE shortlist.custID='.$user.' ORDER BY shortlist.shortlistid DESC; ');

@@ -41,7 +41,9 @@
                     <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
                     <div class="dropdown-content" id="dropdown-content">
                        <?php
-                       foreach($notif as $value){
+                        $connN=new DatabaseTable('notification');
+                        $notif=$connN->notifAll();
+                        foreach($notif as $value){
                            if($value['notif_title']=="Vehicle Approved"){
                            echo '<a href="index.php?page=viewvehicle&vid='.$value['vehicleID'].'&ermsg=0">';}
                        ?>
