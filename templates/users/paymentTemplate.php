@@ -20,7 +20,7 @@
                     <i class="fa fa-cc-discover" style="color:orange;"></i>
                     </div>
         </div>
-
+        <input type="text" name="shid" value="<?php echo $_GET['shid'];?>">
         <div class="payment-name">
             <label for="cname">Name on Card</label>
             <input type="text" id="cname" name="Name" placeholder="Full Name">
@@ -59,7 +59,7 @@
 <div id="ESEWA" class="tabcontent">
   <h3>ESEWA</h3>
    <form action="index.php?page=payment" method="POST"> 
-   
+   <input type="text" name="shid" value="<?php echo $_GET['shid'];?>">
     <label>Transaction ID</label>
     <input type="text" id="transaction_id" name="transaction_id">
     <label>Transaction by</label>
@@ -73,6 +73,7 @@
 <div id="Cash" class="tabcontent">
   <h3>Cash</h3>
    <form action="index.php?page=payment" method="POST"> 
+   <input type="text" name="shid" value="<?php echo $_GET['shid'];?>">
      <label>Name:</label>
     <input type="text" id="delivery_name" name="delivery_name" required>
     <label>Address:</label>

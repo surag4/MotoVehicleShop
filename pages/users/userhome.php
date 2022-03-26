@@ -1,5 +1,4 @@
 <?php
-
 	$title = "Safari Express";
 	$conn = new DatabaseTable('vehicle');
 	$limit=7;

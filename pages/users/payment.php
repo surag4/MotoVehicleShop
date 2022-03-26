@@ -8,8 +8,15 @@
             if($connToInsert){
                 header('location:index.php?page=');
                 //2147483647
-            }
+//
+}
         }
+        if(isset($_POST['esewa'])){
+        $conn1 = new DatabaseTable('payment_esewa');
+        unset($_POST['esewa']);
+        $insertVal= $conn1->insert($_POST);
+        }
+
         $content = loadTemplate('../templates/users/paymentTemplate.php', []);//load template
     }else {
         session_unset();

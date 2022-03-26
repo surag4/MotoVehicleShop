@@ -17,7 +17,8 @@
         $conn2= new DatabaseTable('shortlist');
         $val2 = array(
 			"custID"=>$_SESSION['userID'],
-			"vehicleID"=>$_GET['shvid']
+			"vehicleID"=>$_GET['shvid'],
+            "status"=>"view"
 		);
         $vehicle_id=$_GET['shvid'];
 

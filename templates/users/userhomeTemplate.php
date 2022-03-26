@@ -1,4 +1,3 @@
-
 <article class="vehicleListing">
     <div class="searchcont">
         <div class="countsearch">
