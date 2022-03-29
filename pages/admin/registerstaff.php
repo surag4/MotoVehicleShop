@@ -1,6 +1,6 @@
 <?php
 	$title = "Local Partners Pty Ltd";
-	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && ($_SESSION['role']  == 'staff' || $_SESSION['role'] == 'admin')){
+	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && ($_SESSION['role'] == 'admin')){
 		$connToInsert = new DatabaseTable('users');
 		
 		if(isset($_POST['registerstaff'])){
@@ -11,7 +11,7 @@
 
 		if(isset($_GET['sid'])){
 			$conn = new DatabaseTable('users');
-			$dataa=$conn->find('user_id',$_GET['sid']);
+			$dataa=$conn->find('userID',$_GET['sid']);
 			$data=$dataa->fetch();
 		}
 

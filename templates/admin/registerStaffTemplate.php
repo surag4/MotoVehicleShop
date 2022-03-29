@@ -7,13 +7,13 @@
                 <br>
 
                 <label for="name"><b>First Name</b></label>
-                <input type="text" name="firstname" placeholder="Enter First Name" required>
+                <input type="text" name="firstName" placeholder="Enter First Name" required>
 
                 <label for="name"><b>Last Name</b></label>
-                <input type="text" name="lastname" placeholder="Enter Last Name" required>
+                <input type="text" name="lastName" placeholder="Enter Last Name" required>
 
                 <label for="user anme temp"><b>Staff Username</b></label>
-                <input type="text" placeholder="username" name="username" required>
+                <input type="text" placeholder="userName" name="username" required>
                 
                 <label for="email"><b>Email</b></label>
                 <input type="email" placeholder="Enter Email" name="email" required>

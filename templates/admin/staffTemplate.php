@@ -11,7 +11,7 @@
 
         <?php
         foreach ($data as $value) {
-            echo '<tr><td>'.$value['firstname'].'</td><td>'.$value['lastname'].'</td><td>'.$value['email'].'</td></tr>';
+            echo '<tr><td>'.$value['firstName'].'</td><td>'.$value['lastName'].'</td><td>'.$value['email'].'</td></tr>';
         }
         ?>
     </table>
