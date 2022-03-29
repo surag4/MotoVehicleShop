@@ -8,19 +8,19 @@
             <div class="contact-form">
                 <span>Please send us a message!</span>
                 <label for="name"> Name</label>
-                <input type="hidden" name="staff_id" value="NotAssigned">
-                <input type="text" id="name" placeholder="Full Name" name="cust_name" required>
+                <input type="hidden" name="staffId" value="NotAssigned">
+                <input type="text" id="name" placeholder="Full Name" name="custName" required>
                 
                 <label for="email"> Email</label>
-                <input type="email" id="email" placeholder="someone@mail.com" name="cust_email" required>
+                <input type="email" id="email" placeholder="someone@mail.com" name="custEmail" required>
 
                 <div class="cntnum">
                     <label for="number"> Contact Number</label>
-                    <input type="number" id="number" name="cust_num" min="1000000" max="9999999999" placeholder="0123456789">
+                    <input type="number" id="number" name="custNum" min="1000000" max="9999999999" placeholder="0123456789">
                 </div>
                  
                 <label for="que"> Question</label>
-                <textarea id="que" name="cust_ques" placeholder="Hi! How can I help you?"></textarea>
+                <textarea id="que" name="custQues" placeholder="Hi! How can I help you?"></textarea>
 
                 <input type="submit" name="submit" value="Send Us a Message">
             </div>

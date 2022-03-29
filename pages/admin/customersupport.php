@@ -4,17 +4,17 @@
 		$connToInsert = new DatabaseTable('contactform');
 
 		if ($_SESSION['role']  == 'admin') {
-			$allData=$connToInsert->findcustsv('staff_id = "NotAssigned" OR staff_id = "staff" OR staff_id',$_SESSION['username'], 'CASE WHEN staff_id="NotAssigned" THEN NULL ELSE staff_id END ASC');
+			$allData=$connToInsert->findcustsv('staffId = "NotAssigned" OR staffId = "staff" OR staffId',$_SESSION['userName'], 'CASE WHEN staffId="NotAssigned" THEN NULL ELSE staffId END ASC');
 		} else {
-			$allData=$connToInsert->findcustsv('staff_id = "NotAssigned" OR staff_id',$_SESSION['username'], 'CASE WHEN staff_id="NotAssigned" THEN NULL ELSE staff_id END ASC');
+			$allData=$connToInsert->findcustsv('staffId = "NotAssigned" OR staffId',$_SESSION['userName'], 'CASE WHEN staffId="NotAssigned" THEN NULL ELSE staffId END ASC');
 		}
 
 		if(isset($_GET['assign'])){
 			$values= [
-				'cntfrmid' => $_GET['assign'],
-				'staff_id' => $_SESSION['username']
+				'cntFormID' => $_GET['assign'],
+				'staffId' => $_SESSION['userName']
 			];
-			$connToInsert->update($values,'cntfrmid');
+			$connToInsert->update($values,'cntFormID');
 			header('location:index.php?page=customersupport');
 		}
 		$content = loadTemplate('../templates/admin/custsupTemplate.php', ['allData'=>$allData]);//load template

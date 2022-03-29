@@ -98,6 +98,18 @@ function delete($field, $value) {//passed as array
         return $stmt;
 }
 
+//find customer support queries function
+function findcustsv($field, $value, $orderby) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare("SELECT * FROM " . $this->table . ' WHERE ' . $field . ' = :valu ORDER BY '.$orderby);//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
+
+        return $stmt;
+}
+
 function findAllVec(){
      global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID;');
