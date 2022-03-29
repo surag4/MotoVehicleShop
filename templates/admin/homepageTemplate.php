@@ -21,6 +21,9 @@
             <div class="links">
                 <a href="index.php?page=approve">Approve</a>
                 <a href="index.php?page=sale">Premium Sales</a>
+                <a href="index.php?page=findclients">Clients</a>
+                <a href="index.php?page=staff">Staff Details</a>
+                <a href="index.php?page=customersupport">Support</a>
             </div>
 
             <div class="login">
