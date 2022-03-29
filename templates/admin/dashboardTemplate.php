@@ -1,39 +1,38 @@
-<!-- <section>
- <div class="slides">
-        <?php  
-            // foreach ($allVec as $value) {
-            //     $pidjss = $value['vehicleID'];
-        ?>
-        <div class="vehicle">
-            <div class="thumbnail_images"> 
-                <img src="../images/<?php // echo $pidjss?>/1.jpg" alt="Image Link Broken" style="width:100%; height: 100%;" />
-            </div>
+<section>
+    <?php 
+        $bikecount = 0;
+        $scootercount = 0;
+        foreach($vectype as $value){
+            if ($value['vehicleType']=="Bike") {
+                $bikecount=$bikecount+1;
+            } else {
+                $scootercount = $scootercount+1;
+            }
+    }
+    ?>
+    <div id="piechart"></div>
+</section>
 
-            <div class="details">
-                <span class="nameicon"> <i class="fa-solid fa-motorcycle"></i> </span>
-                <span class="name"><?php // echo $value['modelName'];?></span>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
-                <span class="distTravelledicon"> <i class="fas fa-tachometer-alt"></i> </span>
-                <span class="distTravelled"><?php // echo $value['distanceTravelled'];?></span>
+<script type="text/javascript">
+    // Load google charts
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawChart);
 
-                <span class="locatedicon"> <i class="fas fa-map-marker-alt"></i> </span>
-                <span class="located"><?php // echo $value['locationRegistered'];?></span>
-                    
-                <span class="ccicon"> <i class="fas fa-bolt"></i> </span>
-                <span class="cc"><?php // echo $value['cubicCapacity'];?> CC</span>
+    // Draw the chart and set the chart values
+    function drawChart() {
+    var data = google.visualization.arrayToDataTable([
+    ['Task', 'Hours per Day'],
+    ['Bike',    <?php echo $bikecount; ?>],
+    ['Scooter', <?php echo $scootercount; ?>]
+    ]);
 
-                <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php // echo $value['price'];?></span>
-                <?php
-                // if($value['category']=="premium"){
-                // echo '<a href="index.php?page=dashboard&rvid='.$value['vehicleID'].'" class="getvechicledetails"> Remove From Premium </a>';
-                // }
-                // else{
-                // echo '<a href="index.php?page=dashboard&vid='.$value['vehicleID'].'" class="getvechicledetails"> Make It Premium </a>';
-                // }
-                ?>
-            </div>
-        </div>
-        <?php //} ?>
-    </div>
-</section> -->
+    // Optional; add a title and set the width and height of the chart
+    var options = {'title':'Average Bikes/Scooters on Sale', 'width':550, 'height':400};
+
+    // Display the chart inside the <div> element with id="piechart"
+    var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+    chart.draw(data, options);
+}
+</script>

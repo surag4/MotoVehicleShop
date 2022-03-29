@@ -2,6 +2,7 @@
 	$title = "Safari Express";
 	$conn = new DatabaseTable('vehicle');
 	$allVec=$conn->findAllVec();
+	$vectype=$conn->findVecSale();
 
 	if(isset($_GET['vid'])){
 	$conn2 = new DatabaseTable('vehiclecategory');
@@ -33,6 +34,5 @@
 
 	}
 
-
-	$content = loadTemplate('../templates/admin/dashboardTemplate.php', ['allVec'=>$allVec]);//load template 
+	$content = loadTemplate('../templates/admin/dashboardTemplate.php', ['allVec'=>$allVec, 'vectype'=>$vectype]);//load template 
 ?>

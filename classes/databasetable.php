@@ -110,8 +110,16 @@ function findcustsv($field, $value, $orderby) {//passed as array
         return $stmt;
 }
 
+function findVecSale(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT vehicle.vehicleID, vehicle.modelID, type.vehicleType FROM `vehicle` INNER JOIN type ON vehicle.modelID=type.modelID WHERE uploadStatus=".'1'.";");
+    $stmt->execute();
+    return $stmt;
+
+}
+
 function findAllVec(){
-     global $pdo;
+    global $pdo;
     $stmt = $pdo->prepare('SELECT * FROM '.$this->table.' JOIN type ON vehicle.modelID = type.modelID INNER JOIN vehiclecategory ON vehicle.vehicleID=vehiclecategory.vehicleID;');
     $stmt->execute();
     return $stmt;
