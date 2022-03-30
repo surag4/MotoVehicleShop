@@ -4,10 +4,12 @@
     "\\classes",
     "\\pages",
     "\\pages\\admin",
+    "\\pages\\users",
     "\\public_html",
     "\\templates",
-    "\\templates\\admin"
+    "\\templates\\admin",
+    "\\templates\\users"
   ],
-  "SelectedNode": "\\classes\\databasetable.php",
+  "SelectedNode": "\\templates\\users\\chatnowTemplate.php",
   "PreviewInSolutionExplorer": false
 }

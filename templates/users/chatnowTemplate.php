@@ -4,7 +4,7 @@
             <img src="../images/logo/logo.png" alt="logo">
         </div>
         <div class="loyalname">
-            Loyal Partners Support Service
+            Safari Express Pvt. Ltd
         </div>
     </div>
     <div class="messages">
