@@ -27,6 +27,7 @@
                         // echo '<a href="index.php?page=chatnow">Chat</a>';
                        echo '<a href="index.php?page=AddVechicle">Add Vehicle</a>';
                        echo '<a href="index.php?page=Cart">Cart</a>';
+                       echo '<a href="index.php?page=chatnow">Chat</a>';
                     }
                 ?>
                 

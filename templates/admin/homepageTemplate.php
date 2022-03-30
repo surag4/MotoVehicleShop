@@ -22,13 +22,11 @@
             <div class="links">
                 <a href="index.php?page=approve">Approve</a>
                 <a href="index.php?page=sale">Premium Sales</a>
-<<<<<<< Updated upstream
                 <a href="index.php?page=findclients">Clients</a>
                 <a href="index.php?page=staff">Staff Details</a>
                 <a href="index.php?page=customersupport">Support</a>
-=======
                 <a href="index.php?page=paymentapproval">Payment</a>
->>>>>>> Stashed changes
+                <a href="index.php?page=chat">Chat</a>
             </div>
 
             <div class="login">

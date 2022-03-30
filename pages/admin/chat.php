@@ -5,7 +5,7 @@
         $message=array();
         // ************************-HANDLED CHATS--************************************
 
-        $handledchat=$conn->findmsg('message_to',$_SESSION['username']);
+        $handledchat=$conn->findmsg('message_to',$_SESSION['userName']);
         $handledname=array();
         $handlednamed=array();
         $cunt=0;
@@ -31,7 +31,7 @@
 
         if(isset($_GET['handle'])){
             if(in_array($_GET['handle'],$unhandledname)){
-                $handlingclient=$conn->handlingChat($_SESSION['username'],$_GET['handle']);
+                $handlingclient=$conn->handlingChat($_SESSION['userName'],$_GET['handle']);
                 if($handlingclient){
                     echo '<script>alert("Success.!");</script>';
                 }
@@ -43,7 +43,7 @@
         }
 
         if(isset($_GET['chat'])){
-            $message=$conn->gettingChat($_SESSION['username'],$_GET['chat']);
+            $message=$conn->gettingChat($_SESSION['userName'],$_GET['chat']);
         }
 
         if(isset($_POST['send'])){

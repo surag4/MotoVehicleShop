@@ -15,8 +15,7 @@
             </div>
 
             <div class="clientlastmsgdate">
-                <?php print($handlednamed[$clientcount]);
-                $clientcount++;?>
+             
             </div>
         </div>
         </a>
@@ -31,7 +30,7 @@
                 <img src="../images/logo/logo.png" style="border-radius: 5px;"> <?php } ?>
             </div>
             <div class="clientname">
-                <?php if(!$message){echo "Loyal Partners Pty. Ltd";}
+                <?php if(!$message){echo "Safari Express Pvt. Ltd";}
                 else {echo $_GET['chat'];}
                 ?>
             </div>
@@ -40,7 +39,7 @@
             <?php
             $client="";
             foreach ($message as $mes) {
-                if($mes['message_by']==$_SESSION['username']){ ?>
+                if($mes['message_by']==$_SESSION['userName']){ ?>
                 <div class="outgoing">
                     <div class="sentmsg"><?php echo "<p>". $mes['message'].'</p>'; 
                     if (date("Y-m-d") == $mes['jdate']) {$day= "Today";} else {$day= $mes['montday']; };
@@ -68,7 +67,7 @@
             <form method="post" action="index.php?page=chat">
                 <input type="text" name="message" placeholder="Type a message" required>
                 <input type="hidden" name="message_to" value=<?php if($client!=""){echo $client;} else echo " ";?>>
-                <input type="hidden" name="message_by" value=<?php echo $_SESSION['username'];?>>
+                <input type="hidden" name="message_by" value=<?php echo $_SESSION['userName'];?>>
                 <input type="submit" name="send" value="Send">
             </form>
         </div>

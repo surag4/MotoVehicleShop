@@ -117,7 +117,16 @@ function findcustsv($field, $value, $orderby) {//passed as array
 
         return $stmt;
 }
+function findmsg($field, $value) {//passed as array
+    global $pdo;
+        $stmt = $pdo->prepare("SELECT *, DATE_FORMAT(time, '%r') as time12, DATE_FORMAT(time, '%M %e') as montday, date(time) as jdate FROM " . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
+        $criteria = [
+                'valu' => $value//passed as criteria
+        ];
+        $stmt->execute($criteria);//execute the criteria
 
+        return $stmt;
+}
 function findVecSale(){
     global $pdo;
     $stmt = $pdo->prepare("SELECT vehicle.vehicleID, vehicle.modelID, type.vehicleType FROM `vehicle` INNER JOIN type ON vehicle.modelID=type.modelID WHERE uploadStatus=".'1'.";");
