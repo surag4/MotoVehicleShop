@@ -55,7 +55,15 @@ function find($field, $value) {//passed as array
 
         return $stmt;
 }
+function initialpayment(){
+     global $pdo;
+        $stmt = $pdo->prepare('SELECT * FROM users,shortlist Where shortlist.status = pending AND shortlist.custID=users.userID;');//selects the value
 
+        $stmt->execute();//execute the value
+
+        return $stmt;
+//  
+}
 //findAll function
 function findAll() {
     global $pdo;
@@ -124,6 +132,13 @@ function findAllVec(){
     $stmt->execute();
     return $stmt;
 
+}
+
+function getSeller($val){
+    global $pdo;
+    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
+    $stmt->execute();
+    return $stmt;
 }
 
 function findVec($val){
