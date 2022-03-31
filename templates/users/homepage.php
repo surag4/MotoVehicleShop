@@ -43,7 +43,7 @@
                     <div class="dropdown-content" id="dropdown-content">
                        <?php
                         $connN=new DatabaseTable('notification');
-                        $notif=$connN->notifAll();
+                        $notif=$connN->notifAll($_SESSION['userID']);
                         foreach($notif as $value){
                            if($value['notif_title']=="Vehicle Approved"){
                            echo '<a href="index.php?page=viewvehicle&vid='.$value['vehicleID'].'&ermsg=0">';}

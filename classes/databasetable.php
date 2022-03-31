@@ -145,9 +145,10 @@ function findAllVec(){
 
 function getSeller($val){
     global $pdo;
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
+    $stmt = $pdo->prepare('SELECT users.userID, firstName, lastName,vehicle.price from users JOIN vehicle ON vehicle.userID = users.userID JOIN shortlist On shortlist.vehicleID=vehicle.vehicleID AND shortlist.shortlistid='.$val.';');
     $stmt->execute();
     return $stmt;
+
 }
 
 function findVec($val){
@@ -183,9 +184,9 @@ function orderOn($parameter,$limit){
     return $stmt;
 }
 
-function notifAll() {
+function notifAll($usr) {
     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' ORDER BY notif_id DESC');//selects the value
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' WHERE userID='.$usr.' ORDER BY notif_id DESC');//selects the value
 
         $stmt->execute();//execute the value
 
