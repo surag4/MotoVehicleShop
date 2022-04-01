@@ -1,4 +1,4 @@
-<section>
+<section class="adminndashboard">
     <?php 
         $bikecount = 0;
         $scootercount = 0;
@@ -14,10 +14,12 @@
     <div class="barchart"><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
 
     <?php 
+    $monthName = array();
+    $registeredno = array();
     foreach ($newuser as $monthnum) {
-        $monthName = $monthnum['Month'];
-        $registeredno = $monthnum['Total'];
-    };
+        $monthName[] = $monthnum['Month'];
+        $registeredno[] = $monthnum['Total'];
+      };
     ?>
 </section>
 
@@ -44,9 +46,9 @@
     chart.draw(data, options);
 }
 
-var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
-var yValues = [55, 49, 44, 24, 15];
-var barColors = ["red", "green","blue","orange","brown"];
+var xValues = [<?php foreach ($monthName as $monthnam) { echo '"'.$monthnam.'",'; } ?>];
+var yValues = [<?php foreach ($registeredno as $monthlycount) { echo $monthlycount.', '; } ?>,0];
+var barColors = ["red", "green","blue","orange","brown", "DarkCyan", "FloralWhite", "YellowGreen"];
 
 new Chart("myChart", {
   type: "bar",
@@ -61,7 +63,7 @@ new Chart("myChart", {
     legend: {display: false},
     title: {
       display: true,
-      text: "Number of users joined in a month"
+      text: "Number of users joined in a month for year 2022"
     }
   }
 });

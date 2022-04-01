@@ -114,6 +114,15 @@ nav a {
 	text-align: left;
 }
 
+/* dashboard */
+.adminndashboard {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	width: 90%;
+	margin: 1rem auto;
+}
+
 /* table */
 table {
 	border-collapse: collapse;
