@@ -5,6 +5,7 @@ $conn = new DatabaseTable('payment_esewa');
 $pendingesewa = $conn->findAll();
 $conn2 = new DatabaseTable('creditinfo');
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 $pendingcard = $conn2->findAll();
 $conn3 = new DatabaseTable('cashondelivery');
 $pendingcash=$conn3->findAll();
@@ -40,6 +41,8 @@ $pendingcash = $conn3->findAll();
 
  $content = loadTemplate('../templates/admin/paymentapprovalTemplate.php', ["sellerCash"=>$sellerCash,"pendingcash"=>$pendingcash,"pendingcard"=>$pendingcard,"pendingesewa"=>$pendingesewa,"sellerEsewa"=>$sellerEsewa,"sellerCard"=>$sellerCard]);
 =======
+=======
+>>>>>>> Stashed changes
 $pendingcard = $conn->findAll();
 $conn3 = new DatabaseTable('cashondelivery');
 $conn4 = new DatabaseTable('shortlist');
@@ -50,5 +53,8 @@ foreach($pendingesewa as $value){
 	array_push($seller,$seller_detail);
 }
  $content = loadTemplate('../templates/admin/paymentapprovalTemplate.php', ["seller"=>$seller]);
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 ?>

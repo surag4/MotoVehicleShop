@@ -1,4 +1,5 @@
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 <table>
 <tr><th column=6>ESewa</th></tr>
 <tr><th>Buyer Name</th><th>ESewa Transaction ID</th><th>Remarks</th><th>Amount</th><th>Seller Name</th><th>Approve</th><th>Deny</th></tr>
@@ -36,9 +37,15 @@ $bol=$bol+1;
 </table>
 
 =======
+=======
+>>>>>>> Stashed changes
 <?php
 var_dump($seller);
 
 
+<<<<<<< Updated upstream
+?>
+>>>>>>> Stashed changes
+=======
 ?>
 >>>>>>> Stashed changes
