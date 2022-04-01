@@ -9,7 +9,11 @@
     "\\templates\\admin"
   ],
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
   "SelectedNode": "\\templates\\users\\chatnowTemplate.php",
+=======
+  "SelectedNode": "\\classes\\databasetable.php",
+>>>>>>> Stashed changes
 =======
   "SelectedNode": "\\classes\\databasetable.php",
 >>>>>>> Stashed changes

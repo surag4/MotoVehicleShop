@@ -147,10 +147,16 @@ function getSeller($val){
     global $pdo;
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
     $stmt = $pdo->prepare('SELECT users.userID, firstName, lastName,vehicle.price from users JOIN vehicle ON vehicle.userID = users.userID JOIN shortlist On shortlist.vehicleID=vehicle.vehicleID AND shortlist.shortlistid='.$val.';');
     $stmt->execute();
     return $stmt;
 
+=======
+    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
+    $stmt->execute();
+    return $stmt;
+>>>>>>> Stashed changes
 =======
     $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
     $stmt->execute();
