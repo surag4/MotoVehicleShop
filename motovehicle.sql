@@ -495,7 +495,7 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
+INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`, `registeredDate`) VALUES
 (1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user', '2022-03-01'),
 (2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user', , '2022-03-02'),
 (3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin', , '2022-02-02'),
