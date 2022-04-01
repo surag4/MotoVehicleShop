@@ -11,11 +11,14 @@
     }
     ?>
     <div id="piechart"></div>
+    <div class="barchart"><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
 
-    <?php foreach ($newuser as $monthnum) {
-        echo $monthnum['Month'];
-        echo $monthnum['Total'];
-    };?>
+    <?php 
+    foreach ($newuser as $monthnum) {
+        $monthName = $monthnum['Month'];
+        $registeredno = $monthnum['Total'];
+    };
+    ?>
 </section>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -40,4 +43,26 @@
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
     chart.draw(data, options);
 }
+
+var xValues = ["Italy", "France", "Spain", "USA", "Argentina"];
+var yValues = [55, 49, 44, 24, 15];
+var barColors = ["red", "green","blue","orange","brown"];
+
+new Chart("myChart", {
+  type: "bar",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor: barColors,
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    title: {
+      display: true,
+      text: "Number of users joined in a month"
+    }
+  }
+});
 </script>

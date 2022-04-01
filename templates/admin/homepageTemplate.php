@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/adminstyles.css">
     <script src="../scripts/main.js"></script>
     <script src="https://kit.fontawesome.com/2ce145b69d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js">
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 </head>
 <body>
