@@ -1,4 +1,3 @@
-<!--databasetable connection-->
 <?php
 class DatabaseTable{//class database 
     public $table;//link to the database table
@@ -127,6 +126,15 @@ function findmsg($field, $value) {//passed as array
 
         return $stmt;
 }
+
+function registeredmonth(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT DATE_FORMAT(`registeredDate`, '%M') as `Month`, COUNT(*) as `Total` FROM `users` GROUP BY MONTH(`registeredDate`); ");
+    $stmt->execute();
+    return $stmt;
+
+}
+
 function findVecSale(){
     global $pdo;
     $stmt = $pdo->prepare("SELECT vehicle.vehicleID, vehicle.modelID, type.vehicleType FROM `vehicle` INNER JOIN type ON vehicle.modelID=type.modelID WHERE uploadStatus=".'1'.";");
@@ -145,34 +153,10 @@ function findAllVec(){
 
 function getSeller($val){
     global $pdo;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
     $stmt = $pdo->prepare('SELECT users.userID, firstName, lastName,vehicle.price from users JOIN vehicle ON vehicle.userID = users.userID JOIN shortlist On shortlist.vehicleID=vehicle.vehicleID AND shortlist.shortlistid='.$val.';');
     $stmt->execute();
     return $stmt;
 
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
 }
 
 function findVec($val){
