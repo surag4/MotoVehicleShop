@@ -118,7 +118,6 @@ nav a {
 .adminndashboard {
 	display: flex;
 	align-items: center;
-	flex-direction: column;
 	width: 90%;
 	margin: 1rem auto;
 }

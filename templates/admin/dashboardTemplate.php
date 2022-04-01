@@ -11,7 +11,7 @@
     }
     ?>
     <div id="piechart"></div>
-    <div class="barchart"><canvas id="myChart" style="width:100%;max-width:600px"></canvas></div>
+    <div class="barchart"><canvas id="myChart" style="width:650px;max-width:1000px;height:500px;"></canvas></div>
 
     <?php 
     $monthName = array();
@@ -39,7 +39,7 @@
     ]);
 
     // Optional; add a title and set the width and height of the chart
-    var options = {'title':'Average Bikes/Scooters on Sale', 'width':550, 'height':400};
+    var options = {'title':'Average Bikes/Scooters on Sale', 'width':750, 'height':600};
 
     // Display the chart inside the <div> element with id="piechart"
     var chart = new google.visualization.PieChart(document.getElementById('piechart'));
