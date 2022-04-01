@@ -27,7 +27,7 @@
             <div class="clientinficn">
                 <?php if($message) { ?>
                 <img src="../images/logo/user.jpg" alt="logo"> <?php } else { ?>
-                <img src="../images/logo/logo.png" style="border-radius: 5px;"> <?php } ?>
+                <img src="../images/logo/logo.jpg" style="border-radius: 5px;"> <?php } ?>
             </div>
             <div class="clientname">
                 <?php if(!$message){echo "Safari Express Pvt. Ltd";}

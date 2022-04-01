@@ -22,6 +22,10 @@
 	if($_SESSION['login']==1 && $_SESSION['userID']!=0){
 	$connNotif = new DatabaseTable('notification');
 	$notif = $connNotif->find("userID",$_SESSION['userID']);
-	}}
+	}
+	}
+	else{
+	$_SESSION['login']=0;
+	}
 	$content = loadTemplate('../templates/users/userhomeTemplate.php', ["trendScooter"=>$trendScooter,"trendBike"=>$trendBike,"popular"=>$popular,"premiumSale"=>$premiumSale,"notif"=>$notif]);//load template
 ?>
