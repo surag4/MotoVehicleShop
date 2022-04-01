@@ -1,4 +1,4 @@
-<?php
+ <?php
 class DatabaseTable{//class database 
     public $table;//link to the database table
     function __construct($table){//construct the table
