@@ -24,7 +24,8 @@
                 <a href="index.php?page=approve">Approve</a>
                 <a href="index.php?page=sale">Premium Sales</a>
                 <a href="index.php?page=findclients">Clients</a>
-                <a href="index.php?page=staff">Staff Details</a>
+                <?php if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && $_SESSION['role'] == "admin"){ ?>
+                <a href="index.php?page=staff">Staff Details</a> <?php } ?>
                 <a href="index.php?page=customersupport">Support</a>
                 <a href="index.php?page=chat">Chat</a>
                 <a href="index.php?page=paymentapproval">Payment</a>
@@ -32,19 +33,6 @@
 
             <div class="login">
                 <?php echo '<b><a href="#">User: '. $_SESSION['userName'] .'</a></b>' ; ?>
-                <!-- notification bell -->
-                <div class="dropdown" id="dropdown">
-                    <button class="dropbtn" onclick="myFunction()"><i class="fa fa-bell"></i></button>
-                    <div class="dropdown-content" id="dropdown-content"> 
-                        <div class="itms">
-                            <img src="../images/logo/avatar1.png" alt="logo">
-                            <div class="text">
-                                <h4><?php echo $value['notif_title'];?></h4>
-                                <p><?php echo $value['notif_msg'];?></p>
-                            </div><br>
-                        </div>
-                    </div>
-                </div>
                 <!-- Logout button -->
                 <form action="../public_html/index.php?page=login" method="POST">
                     <input type="submit" name="logout" value="Logout">
