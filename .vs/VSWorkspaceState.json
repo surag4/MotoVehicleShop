@@ -4,12 +4,14 @@
     "\\classes",
     "\\pages",
     "\\pages\\admin",
-    "\\pages\\users",
     "\\public_html",
     "\\templates",
-    "\\templates\\admin",
-    "\\templates\\users"
+    "\\templates\\admin"
   ],
+<<<<<<< Updated upstream
   "SelectedNode": "\\templates\\users\\chatnowTemplate.php",
+=======
+  "SelectedNode": "\\classes\\databasetable.php",
+>>>>>>> Stashed changes
   "PreviewInSolutionExplorer": false
 }
