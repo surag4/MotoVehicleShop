@@ -41,22 +41,12 @@ foreach($data as $value){
         </div>
         
         <?php if($shortlisted && $_SESSION['login']!=0){
-<<<<<<< Updated upstream
             echo '<div class="buybtn"> <a href=index.php?page=viewvehicle&dshid='.$shortlisted['shortlistid'].'&vid='.$pid.'&ermsg=0>';
             if($buy==1){
                 echo '<a href=index.php?page=payment&shid='.$shortlisted['shortlistid'].'><button class="buyButton">BUY</button></a></div>';
             } 
         } elseif(!$shortlisted && $_SESSION['login']!=0) {
             echo '<a href=index.php?page=viewvehicle&shvid='.$pid.'&uid='.$_SESSION['userID'].'>';
-=======
-        echo '<a href=index.php?page=viewvehicle&dshid='.$shortlisted['shortlistid'].'&vid='.$pid.'&ermsg=0>';
-        if($buy==1 && $shortlisted['custID']!=$_SESSION['userID']){
-        echo '<a href=index.php?page=payment&shid='.$shortlisted['shortlistid'].'><button class="button">BUY</button></a>';
-        } 
-       }
-        elseif(!$shortlisted && $_SESSION['login']!=0) {
-        echo '<a href=index.php?page=viewvehicle&shvid='.$pid.'&uid='.$_SESSION['userID'].'>';
->>>>>>> Stashed changes
         }
         else{
             echo '<a href=index.php?page=login>';
