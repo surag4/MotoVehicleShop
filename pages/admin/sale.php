@@ -6,24 +6,24 @@
 	$onsaledata=$conn->flashSale($onsale);
 	$offsaledata=$conn->flashSale($offsale);
 
-	if(isset($GET['cid'])){
-		$conn2 = new DatabaseTable('vehiclecategory');
+	if(isset($_GET['cid'])){
+		$conn = new DatabaseTable('vehiclecategory');
 		$val = array(
-			"categoryID"=>$GET['cid'],
+			"categoryID"=>$_GET['cid'],
 			"category"=>"premium"
 		);
-		$conn2->update($val,"categoryID");
-		// header('location:index.php?page=sale');	
+		$conn->update($val,"categoryID");
+		header('location:index.php?page=sale');	
 	}
 	
-	if(isset($GET['cvid'])){
-		$conn2 = new DatabaseTable('vehiclecategory');
+	if(isset($_GET['cvid'])){
+		$conn = new DatabaseTable('vehiclecategory');
 		$val = array(
-			"categoryID"=>$GET['cid'],
+			"categoryID"=>$_GET['cvid'],
 			"category"=>"normal"
 		);
-		$conn2->update($val,"categoryID");
-		// header('location:index.php?page=sale');
+		$conn->update($val,"categoryID");
+		header('location:index.php?page=sale');
 	}
 
 	
