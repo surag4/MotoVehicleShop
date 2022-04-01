@@ -1196,6 +1196,20 @@ border-radius: 3px 0 0 3px;
   100% {padding:10px 12px 8px;}
 }
 
+.buybtn {
+  display: flex;
+  justify-content: right;
+  width: 85%;
+}
+
+.buyButton {
+  background-color: lightgreen;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  margin: 0.5rem 0 1.5rem;
+  cursor: pointer;
+}
+
 .vehicledesc {
   margin: 0 auto;
   width: 70%;

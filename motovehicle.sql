@@ -55,7 +55,8 @@ CREATE TABLE `contactform` (
   `custEmail` varchar(255) NOT NULL,
   `custNum` int(255) DEFAULT NULL,
   `custQues` varchar(255) NOT NULL,
-  `staffId` varchar(255) DEFAULT NULL
+  `staffId` varchar(255) DEFAULT NULL,
+  `requestedDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `contactform` (`cntFormID`, `custName`, `custEmail`, `custNum`, `custQues`, `staffId`, `requestedDate`) VALUES
@@ -487,7 +488,7 @@ CREATE TABLE `users` (
   `password` varchar(255) NOT NULL,
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
-  `role` varchar(255) NOT NULL
+  `role` varchar(255) NOT NULL,
   `registeredDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -497,20 +498,20 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`, `registeredDate`) VALUES
 (1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user', '2022-03-01'),
-(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user', , '2022-03-02'),
-(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin', , '2022-02-02'),
-(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user', , '2022-01-02'),
-(5, 'user1', 'amirbhan@gmail.com', 'user1', 'Amir', 'Bhandari', 'user', , '2022-03-09'),
-(6, 'user2', 'raxitmanandhar@gmail.com', 'user2', 'Raxit', 'Manandhar', 'user', , '2022-01-02'),
-(7, 'user3', 'sumitmanan@gmail.com', 'user3', 'Sumit', 'Manandhar', 'user', , '2022-01-02'),
-(8, 'user5', 'andrew.garfield@gmail.com', 'user5', 'Andrew', 'Garfield', 'user', , '2022-02-02'),
-(9, 'user4', 'manish.pandey@gmail.com', 'user4', 'Manish', 'Pandey', 'user', , '2022-02-02'),
-(10, 'user6', 'ram20@gmail.com', 'user6', 'Ram', 'Bahadur', 'user', , '2022-01-02'),
-(12, 'user7', 'sauravstha@gmail.com', 'user7', 'Saurav', 'Shrestha', 'user', , '2022-03-02'),
-(13, 'user8', 'shreya.th89@gmail.com', 'user8', 'Shreya', 'Thapa', 'user', , '2022-01-02'),
-(14, 'user10', 'prateek.khuy@gmail.com', 'user10', 'Prateek', 'Khuyed', 'user', , '2022-03-02'),
-(15, 'user9', 'hari.bhad.66@gmail.com', 'user9', 'Hari', 'Bahadur', 'user', , '2022-02-02'),
-(16, 'user11', 'kennerich@gmail.com', 'user11', 'Kodex', 'Kenner', 'user', , '2022-01-02');
+(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user', '2022-03-02'),
+(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin', '2022-02-02'),
+(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user', '2022-01-02'),
+(5, 'user1', 'amirbhan@gmail.com', 'user1', 'Amir', 'Bhandari', 'user', '2022-03-09'),
+(6, 'user2', 'raxitmanandhar@gmail.com', 'user2', 'Raxit', 'Manandhar', 'user', '2022-01-02'),
+(7, 'user3', 'sumitmanan@gmail.com', 'user3', 'Sumit', 'Manandhar', 'user', '2022-01-02'),
+(8, 'user5', 'andrew.garfield@gmail.com', 'user5', 'Andrew', 'Garfield', 'user', '2022-02-02'),
+(9, 'user4', 'manish.pandey@gmail.com', 'user4', 'Manish', 'Pandey', 'user', '2022-02-02'),
+(10, 'user6', 'ram20@gmail.com', 'user6', 'Ram', 'Bahadur', 'user', '2022-01-02'),
+(12, 'user7', 'sauravstha@gmail.com', 'user7', 'Saurav', 'Shrestha', 'user', '2022-03-02'),
+(13, 'user8', 'shreya.th89@gmail.com', 'user8', 'Shreya', 'Thapa', 'user', '2022-01-02'),
+(14, 'user10', 'prateek.khuy@gmail.com', 'user10', 'Prateek', 'Khuyed', 'user', '2022-03-02'),
+(15, 'user9', 'hari.bhad.66@gmail.com', 'user9', 'Hari', 'Bahadur', 'user', '2022-02-02'),
+(16, 'user11', 'kennerich@gmail.com', 'user11', 'Kodex', 'Kenner', 'user', '2022-01-02');
 
 -- --------------------------------------------------------
 
