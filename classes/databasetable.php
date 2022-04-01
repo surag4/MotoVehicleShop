@@ -55,15 +55,7 @@ function find($field, $value) {//passed as array
 
         return $stmt;
 }
-function initialpayment(){
-     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM users,shortlist Where shortlist.status = pending AND shortlist.custID=users.userID;');//selects the value
 
-        $stmt->execute();//execute the value
-
-        return $stmt;
-//  
-}
 //findAll function
 function findAll() {
     global $pdo;
@@ -117,27 +109,7 @@ function findcustsv($field, $value, $orderby) {//passed as array
 
         return $stmt;
 }
-function findmsg($field, $value) {//passed as array
-    global $pdo;
-        $stmt = $pdo->prepare("SELECT *, DATE_FORMAT(time, '%r') as time12, DATE_FORMAT(time, '%M %e') as montday, date(time) as jdate FROM " . $this->table . ' WHERE ' . $field . ' = :valu');//prepare the value
-        $criteria = [
-                'valu' => $value//passed as criteria
-        ];
-        $stmt->execute($criteria);//execute the criteria
 
-<<<<<<< Updated upstream
-        return $stmt;
-}
-=======
-function registeredmonth(){
-    global $pdo;
-    $stmt = $pdo->prepare("SELECT DATE_FORMAT(`registeredDate`, '%M') as `Month`, COUNT(*) as `Total` FROM `users` GROUP BY MONTH(`registeredDate`); ");
-    $stmt->execute();
-    return $stmt;
-
-}
-
->>>>>>> Stashed changes
 function findVecSale(){
     global $pdo;
     $stmt = $pdo->prepare("SELECT vehicle.vehicleID, vehicle.modelID, type.vehicleType FROM `vehicle` INNER JOIN type ON vehicle.modelID=type.modelID WHERE uploadStatus=".'1'.";");
@@ -152,32 +124,6 @@ function findAllVec(){
     $stmt->execute();
     return $stmt;
 
-}
-
-function getSeller($val){
-    global $pdo;
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-    $stmt = $pdo->prepare('SELECT users.userID, firstName, lastName,vehicle.price from users JOIN vehicle ON vehicle.userID = users.userID JOIN shortlist On shortlist.vehicleID=vehicle.vehicleID AND shortlist.shortlistid='.$val.';');
-    $stmt->execute();
-    return $stmt;
-
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
-=======
-    $stmt = $pdo->prepare('SELECT firstName, lastName from users, vehicle, '.$this->table.' WHERE shortlist.vehicleID=vehicle.vehicleID AND vehicle.userID = users.userID AND shortlist.shortlistid=12;');
-    $stmt->execute();
-    return $stmt;
->>>>>>> Stashed changes
 }
 
 function findVec($val){
@@ -213,9 +159,9 @@ function orderOn($parameter,$limit){
     return $stmt;
 }
 
-function notifAll($usr) {
+function notifAll() {
     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' WHERE userID='.$usr.' ORDER BY notif_id DESC');//selects the value
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' ORDER BY notif_id DESC');//selects the value
 
         $stmt->execute();//execute the value
 
