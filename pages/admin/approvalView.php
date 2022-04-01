@@ -18,6 +18,7 @@
 		);
 
 		$conn2->insert($val);
+
 		$conn3 = new DatabaseTable('notification');
 
 		$val = array(

@@ -239,7 +239,144 @@ nav {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+/* chat messages   */
+.chattemplate {
+  background: #fff;
+	position: relative;
+  width: 80%;
+  margin: 4rem auto;
+  border: #DDE8F9 1px solid;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
 
+.loyalinnfo {
+	background: #9c9ca3;
+	font-size: 1rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	text-transform: capitalize;
+	padding: 0.5rem;
+}
+
+.messages {
+  min-height: 24rem;;
+	max-height: 25rem;
+	overflow: auto;
+}
+
+.incomingmsgicon img{
+	border-radius: 50%;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.loyalinficn img{
+	border-radius: 5px;
+  margin: 0 0.5rem;
+  width: 100%;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.loyalname {
+	text-align: left;
+  margin-left: 1rem;
+	font-size: 1.1rem;
+}
+
+.outgoing{ 
+	overflow:hidden; 
+	margin:26px 0 26px;
+	padding-right: 0.5rem;
+}
+
+.sentmsg {
+  float: right;
+  width: 46%;
+}
+
+.sentmsg p {	
+	background: #0084ff none repeat scroll 0 0;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	margin: 0; 
+	color:#fff;
+	padding: 5px 10px 5px 12px;
+	width:100%;
+	text-align: left;
+}
+
+.incoming {
+	margin: 1rem 0;
+	padding-left: 0.5rem;
+}
+
+.incomingmsgicon, .loyalinficn {
+	display: inline-block;
+	width: 6%;
+}
+
+.receivedmsg {
+	display: inline-block;
+	padding: 0 0 0 10px;
+	vertical-align: top;
+	width: 92%;
+}
+
+.receivedmsg p {
+	background: #e4e6eb none repeat scroll 0 0;
+	border-radius: 0.5rem;
+	color: #000;
+	font-size: 1rem;
+	margin: 0;
+	padding: 5px 10px 5px 12px;
+	width: 58%;
+  }
+
+.receivedmsg span, .sentmsg span {
+	color: #000;
+	display: block;
+	font-size: 12px;
+	margin: 8px 0 0;
+}
+
+
+.messagebox {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.messagebox form{
+	display: flex;
+	margin: 0.5rem;
+	padding-top: 0.5rem;
+}
+
+.messagebox form input[type="text"] {
+	margin: 0;
+	border:hidden;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.messagebox form input[type="submit"] {
+  padding: 0 12px;
+  margin: 0 0.5rem;
+  bottom: 0;
+  border-radius: 0.5rem;
+	background-color: #0430aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
 .dropdown-content img {
   width: 80px;
   border-radius: 50%;

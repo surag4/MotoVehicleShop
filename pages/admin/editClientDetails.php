@@ -13,7 +13,7 @@
 			$conn = new DatabaseTable('users');
 			unset($_POST['Update']);
 			$conn->update($_POST,'userID');
-
+			$conn = new DatabaseTable('users');
 			$dataa=$conn->find('userID',$_POST['userID']);
 			$data=$dataa->fetch();
 		}
