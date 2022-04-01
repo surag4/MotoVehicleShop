@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 14, 2022 at 10:08 AM
+-- Generation Time: Apr 01, 2022 at 08:07 AM
 -- Server version: 10.4.22-MariaDB
--- PHP Version: 8.0.13
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,6 +24,28 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `cashondelivery`
+--
+
+CREATE TABLE `cashondelivery` (
+  `COD_id` int(255) NOT NULL,
+  `delivery_name` varchar(255) NOT NULL,
+  `delivery_addr` varchar(255) NOT NULL,
+  `delivery_phone` varchar(255) NOT NULL,
+  `alt_delivery_phone` varchar(255) DEFAULT NULL,
+  `shid` int(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cashondelivery`
+--
+
+INSERT INTO `cashondelivery` (`COD_id`, `delivery_name`, `delivery_addr`, `delivery_phone`, `alt_delivery_phone`, `shid`) VALUES
+(1, 'Bipu Ojha', 'Samakhosi, Ktm', '98149999999', '981808080', 12);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `contactform`
 --
 
@@ -35,6 +57,34 @@ CREATE TABLE `contactform` (
   `custQues` varchar(255) NOT NULL,
   `staffId` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `contactform` (`cntFormID`, `custName`, `custEmail`, `custNum`, `custQues`, `staffId`, `requestedDate`) VALUES
+(1, 'test', 'test@test.com', 1919191917, 'message', 'staff', '2022-03-29');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `creditinfo`
+--
+
+CREATE TABLE `creditinfo` (
+  `creditcardID` int(11) NOT NULL,
+  `Name` varchar(255) NOT NULL,
+  `cardnumber` int(11) NOT NULL,
+  `exp_month` int(11) NOT NULL,
+  `exp_year` int(11) NOT NULL,
+  `cvv` int(11) NOT NULL,
+  `shid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `creditinfo`
+--
+
+INSERT INTO `creditinfo` (`creditcardID`, `Name`, `cardnumber`, `exp_month`, `exp_year`, `cvv`, `shid`) VALUES
+(7, 'Image Bhandari', 2147483647, 4, 2022, 253, 5),
+(8, 'Ramesh Kaka', 2147483647, 8, 2026, 112, 6),
+(9, 'Ramesh Kaka', 2147483647, 1, 2021, 100, 0);
 
 -- --------------------------------------------------------
 
@@ -77,6 +127,40 @@ INSERT INTO `manufacturer` (`brandID`, `brandName`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `messages`
+--
+
+CREATE TABLE `messages` (
+  `message_by` varchar(255) NOT NULL,
+  `message_to` varchar(255) NOT NULL,
+  `message` varchar(255) NOT NULL,
+  `message_id` int(255) NOT NULL,
+  `date` date DEFAULT current_timestamp(),
+  `time` time NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `messages`
+--
+
+INSERT INTO `messages` (`message_by`, `message_to`, `message`, `message_id`, `date`, `time`) VALUES
+('ram', 'staff', 'k cha', 1, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'k cha babu? k sodhichau?', 2, '2021-09-06', '22:28:58'),
+('ram', 'staff', 'hami k bhanxau bhanne.... jindagi k cha?? bahut garo cha hai daju', 3, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'hi', 4, '2021-09-06', '22:28:58'),
+('staff', 'ram', 'whats up', 5, '2021-09-09', '12:46:28'),
+('admin', '', 'hi', 6, '2022-03-30', '22:04:22'),
+('admin', '', 'hi', 7, '2022-03-30', '22:05:12'),
+('laxman', 'admin', 'hi', 8, '2022-03-30', '22:14:49'),
+('admin', 'laxman', 'helo', 9, '2022-03-30', '22:22:18'),
+('laxman', 'admin', 'oe buda.. ', 10, '2022-03-31', '09:48:08'),
+('admin', 'laxman', 'bhaak', 11, '2022-03-31', '09:48:48'),
+('user11', 'admin', 'kaile sell huncha mero bike?', 12, '2022-03-31', '17:19:38'),
+('admin', 'user11', 'huncha sir, chitai. Please give some time.', 13, '2022-03-31', '17:20:57');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `notification`
 --
 
@@ -85,15 +169,44 @@ CREATE TABLE `notification` (
   `notif_title` varchar(255) NOT NULL,
   `notif_msg` varchar(255) NOT NULL,
   `notif_date` timestamp NOT NULL DEFAULT current_timestamp(),
-  `role` varchar(255) NOT NULL
+  `userID` int(255) NOT NULL,
+  `vehicleID` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `notification`
 --
 
-INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `role`) VALUES
-(1, 'Covid Safety', 'Mask lagam chill basam', '2022-02-27 06:54:35', 'Everyone');
+INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`, `userID`, `vehicleID`) VALUES
+(1, 'Covid Safety', 'Mask lagam chill basam', '2022-02-27 06:54:35', 0, 0),
+(2, 'Vehicle Approved', 'Your upload request has been approved. Please click here to view.', '2022-03-20 05:04:53', 1, 11),
+(3, 'Approval Denied', 'Your upload request has been discarded. Please try again with valid information.', '2022-03-20 06:13:36', 1, 10),
+(4, 'Vehicle Approved', 'Your upload request has been approved. Please click here to view.', '2022-03-31 04:04:51', 1, 9),
+(5, 'Vehicle Approved', 'Your upload request has been approved. Please click here to view.', '2022-03-31 06:58:07', 5, 12),
+(6, 'Vehicle Approved', 'Your upload request has been approved. Please click here to view.', '2022-03-31 07:08:18', 6, 14),
+(7, 'Vehicle Approved', 'Your upload request has been approved. Please click here to view.', '2022-03-31 11:32:29', 16, 32);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `payment_esewa`
+--
+
+CREATE TABLE `payment_esewa` (
+  `esewa_payment_id` int(255) NOT NULL,
+  `transaction_id` varchar(255) NOT NULL,
+  `transaction_by` varchar(255) NOT NULL,
+  `transaction_remarks` varchar(255) NOT NULL,
+  `shid` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `payment_esewa`
+--
+
+INSERT INTO `payment_esewa` (`esewa_payment_id`, `transaction_id`, `transaction_by`, `transaction_remarks`, `shid`) VALUES
+(1, 'abc123', 'image', '$400', 12),
+(2, '983479827', 'Ram Hari', 'Send you $500', 12);
 
 -- --------------------------------------------------------
 
@@ -103,8 +216,22 @@ INSERT INTO `notification` (`notif_id`, `notif_title`, `notif_msg`, `notif_date`
 
 CREATE TABLE `shortlist` (
   `custID` int(11) DEFAULT NULL,
-  `vehicleID` int(11) DEFAULT NULL
+  `vehicleID` int(11) DEFAULT NULL,
+  `shortlistid` int(255) NOT NULL,
+  `status` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `shortlist`
+--
+
+INSERT INTO `shortlist` (`custID`, `vehicleID`, `shortlistid`, `status`) VALUES
+(1, NULL, 4, ''),
+(1, NULL, 5, ''),
+(1, NULL, 6, 'pending'),
+(1, NULL, 7, ''),
+(1, 3, 12, 'pending_esewa'),
+(1, 1, 13, 'pending_esewa');
 
 -- --------------------------------------------------------
 
@@ -361,6 +488,7 @@ CREATE TABLE `users` (
   `firstName` varchar(255) NOT NULL,
   `lastName` varchar(255) NOT NULL,
   `role` varchar(255) NOT NULL
+  `registeredDate` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -368,10 +496,21 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`userID`, `userName`, `email`, `password`, `firstName`, `lastName`, `role`) VALUES
-(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user'),
-(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user'),
-(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin'),
-(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user');
+(1, 'imageb', 'image@bhandari.com', 'image', 'Image', 'Bhandari', 'user', '2022-03-01'),
+(2, 'dikshantk', 'dikshant@koirala.com', 'koirala.com', 'Dikshant', 'Koirala', 'user', , '2022-03-02'),
+(3, 'admin', 'admin@admin.com', 'admin', 'admin', 'admin', 'admin', , '2022-02-02'),
+(4, 'sp', 'suragpandit@gmail.com', 'surag', 'Surag', 'Pandit', 'user', , '2022-01-02'),
+(5, 'user1', 'amirbhan@gmail.com', 'user1', 'Amir', 'Bhandari', 'user', , '2022-03-09'),
+(6, 'user2', 'raxitmanandhar@gmail.com', 'user2', 'Raxit', 'Manandhar', 'user', , '2022-01-02'),
+(7, 'user3', 'sumitmanan@gmail.com', 'user3', 'Sumit', 'Manandhar', 'user', , '2022-01-02'),
+(8, 'user5', 'andrew.garfield@gmail.com', 'user5', 'Andrew', 'Garfield', 'user', , '2022-02-02'),
+(9, 'user4', 'manish.pandey@gmail.com', 'user4', 'Manish', 'Pandey', 'user', , '2022-02-02'),
+(10, 'user6', 'ram20@gmail.com', 'user6', 'Ram', 'Bahadur', 'user', , '2022-01-02'),
+(12, 'user7', 'sauravstha@gmail.com', 'user7', 'Saurav', 'Shrestha', 'user', , '2022-03-02'),
+(13, 'user8', 'shreya.th89@gmail.com', 'user8', 'Shreya', 'Thapa', 'user', , '2022-01-02'),
+(14, 'user10', 'prateek.khuy@gmail.com', 'user10', 'Prateek', 'Khuyed', 'user', , '2022-03-02'),
+(15, 'user9', 'hari.bhad.66@gmail.com', 'user9', 'Hari', 'Bahadur', 'user', , '2022-02-02'),
+(16, 'user11', 'kennerich@gmail.com', 'user11', 'Kodex', 'Kenner', 'user', , '2022-01-02');
 
 -- --------------------------------------------------------
 
@@ -401,7 +540,34 @@ INSERT INTO `vehicle` (`vehicleID`, `modelID`, `modelYear`, `vehicleDescription`
 (1, 132, 1, 'It is a brand new not much used. It is still under warranty and free service coupon is also not used at all.', 20000, 'Bagmati', 50000, 4, '1st Owner', '2022-03-08', 1),
 (2, 122, 1, 'It has been used for 2 years, however it is still under warranty.', 35678, 'Narayani', 30000, 2, '2nd Owner', '2022-03-03', 1),
 (3, 55, 2020, 'As good as new. Regularly serviced. Well Maintained. Driven by 1 person the entire time. No issues. Still under warranty.', 123456, 'Bagmati', 275498, 4, '1st Owner', '2022-03-14', 1),
-(4, 129, 2020, 'oiuy', 123, 'ok', 1223, 4, '2nd Owner', '2022-03-14', 1);
+(4, 129, 2020, 'oiuy', 123, 'ok', 1223, 4, '2nd Owner', '2022-03-14', 1),
+(5, 123, 2014, 'test', 3434, 'KTM', 9999999, 1, '2nd Owner', '2022-03-14', 0),
+(6, 123, 2014, 'test', 3434, 'KTM', 9999999, 1, '2nd Owner', '2022-03-14', 0),
+(7, 123, 2014, 'test', 3434, 'KTM', 9999999, 1, '2nd Owner', '2022-03-14', 0),
+(8, 123, 2014, 'test', 3434, 'KTM', 9999999, 1, '2nd Owner', '2022-03-14', 0),
+(9, 15, 2019, 'test', 3456, 'lalitpur', 6767, 1, '1st Owner', '2022-03-14', 1),
+(12, 138, 2020, 'This bike is in good condition. Call me if you need further details.', 1500, 'Naxal', 500000, 5, '1st Owner', '2022-03-31', 1),
+(13, 12, 2020, 'This scooter is so good. DM for more info.', 25000, 'Kathmandu', 250000, 5, '1st Owner', '2022-03-31', 0),
+(14, 26, 2018, 'Good in condition. DM for more info.', 30000, 'kathmandu', 178000, 6, '1st Owner', '2022-03-31', 1),
+(15, 94, 2019, 'The scooter is in fine condition. DM for more details.', 20000, 'lalitpur', 85000, 6, '1st Owner', '2022-03-31', 0),
+(16, 126, 2020, 'This bike is in good condition. PLease dm for more details.', 32000, 'Bhaktapur', 432000, 7, '1st Owner', '2022-03-31', 0),
+(17, 7, 2019, 'Message for more information about the scooter.', 430000, 'Kathmandu', 320000, 8, '1st Owner', '2022-03-31', 0),
+(18, 108, 2021, 'IT is in fine condition. Selling urgently.', 1500, 'Lumbini', 178000, 7, '2nd Owner', '2022-03-31', 0),
+(19, 115, 2018, 'Message for more information about the bike.', 550000, 'Pokhara', 1000000, 8, '1st Owner', '2022-03-31', 0),
+(20, 95, 2017, 'It is an awesome bike in perfect condition. DM for more details.', 26000, 'Chakrapath', 210000, 9, '1st Owner', '2022-03-31', 0),
+(21, 117, 2020, 'Message for more information about the bike.', 120056, 'Chitwan', 1400000, 10, '1st Owner', '2022-03-31', 0),
+(22, 131, 2021, 'This scooter is perfect in condition. Users can test drive. DM for more details.', 13000, 'Butwal', 145000, 9, '1st Owner', '2022-03-31', 0),
+(23, 131, 2015, 'Message for more information about the scooter.', 3056708, 'Ithari', 250000, 10, '2nd Owner', '2022-03-31', 0),
+(24, 55, 2021, 'This is an awesome bike in perfect condition. Price can be negotiable. DM for more details.', 13450, 'Biratnagar', 5200000, 12, '1st Owner', '2022-03-31', 0),
+(25, 9, 2021, 'Perfect condition\r\ngood mileage\r\nawesome feel\r\nDM for price.', 12000, 'Lalitpur', 285000, 12, '1st Owner', '2022-03-31', 0),
+(26, 135, 2021, 'Message for more information about the bike.', 236560, 'Lalitpur', 350000, 13, '1st Owner', '2022-03-31', 0),
+(27, 136, 2022, 'Awesome condition\r\nnice looks and lovely\r\nplease dm for several details', 7900, 'Kathmandu', 875000, 14, '1st Owner', '2022-03-31', 0),
+(28, 185, 2020, 'Message for more information about the scooter.', 564423, 'Birgunj', 250020, 13, '1st Owner', '2022-03-31', 0),
+(29, 182, 2021, 'Fine condition\r\nmuch mileage \r\ndm for more details', 22000, 'Balaju', 178000, 14, '1st Owner', '2022-03-31', 0),
+(30, 52, 2017, 'Message for more information about the bike.', 300000, 'Kathmandu', 1000000, 15, '1st Owner', '2022-03-31', 0),
+(31, 162, 2020, 'Message for more information about the scooter.', 565123, 'Dharan', 200000, 15, '1st Owner', '2022-03-31', 0),
+(32, 68, 2022, 'Super duper cool looks with fabulous condition \r\nlike new \r\ninterested can DM for more details\r\n', 1100, 'Kathmandu', 4200000, 16, '1st Owner', '2022-03-31', 1),
+(33, 213, 2022, 'Perfect conditions\r\ngood mileage\r\ndm for more', 11000, 'Kathmandu', 2150000, 16, '1st Owner', '2022-03-31', 0);
 
 -- --------------------------------------------------------
 
@@ -421,10 +587,15 @@ CREATE TABLE `vehiclecategory` (
 --
 
 INSERT INTO `vehiclecategory` (`categoryID`, `vehicleID`, `hitcount`, `category`) VALUES
-(1, 1, 7, 'premium'),
-(2, 2, 4, 'premium'),
-(3, 3, 3, 'premium'),
-(4, 4, 0, 'normal');
+(1, 1, 66, 'normal'),
+(2, 2, 36, 'normal'),
+(3, 3, 14, 'premium'),
+(4, 4, 54, 'normal'),
+(5, 11, 55, 'normal'),
+(6, 9, 1, 'normal'),
+(7, 12, 2, 'normal'),
+(8, 14, 15, 'normal'),
+(9, 32, 2, 'premium');
 
 -- --------------------------------------------------------
 
@@ -442,10 +613,22 @@ CREATE TABLE `vehicleregistration` (
 --
 
 --
+-- Indexes for table `cashondelivery`
+--
+ALTER TABLE `cashondelivery`
+  ADD PRIMARY KEY (`COD_id`);
+
+--
 -- Indexes for table `contactform`
 --
 ALTER TABLE `contactform`
   ADD PRIMARY KEY (`cntFormID`);
+
+--
+-- Indexes for table `creditinfo`
+--
+ALTER TABLE `creditinfo`
+  ADD PRIMARY KEY (`creditcardID`);
 
 --
 -- Indexes for table `manufacturer`
@@ -454,10 +637,28 @@ ALTER TABLE `manufacturer`
   ADD PRIMARY KEY (`brandID`);
 
 --
+-- Indexes for table `messages`
+--
+ALTER TABLE `messages`
+  ADD PRIMARY KEY (`message_id`);
+
+--
 -- Indexes for table `notification`
 --
 ALTER TABLE `notification`
   ADD PRIMARY KEY (`notif_id`);
+
+--
+-- Indexes for table `payment_esewa`
+--
+ALTER TABLE `payment_esewa`
+  ADD PRIMARY KEY (`esewa_payment_id`);
+
+--
+-- Indexes for table `shortlist`
+--
+ALTER TABLE `shortlist`
+  ADD PRIMARY KEY (`shortlistid`);
 
 --
 -- Indexes for table `type`
@@ -488,10 +689,22 @@ ALTER TABLE `vehiclecategory`
 --
 
 --
+-- AUTO_INCREMENT for table `cashondelivery`
+--
+ALTER TABLE `cashondelivery`
+  MODIFY `COD_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT for table `contactform`
 --
 ALTER TABLE `contactform`
   MODIFY `cntFormID` int(255) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `creditinfo`
+--
+ALTER TABLE `creditinfo`
+  MODIFY `creditcardID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `manufacturer`
@@ -500,10 +713,28 @@ ALTER TABLE `manufacturer`
   MODIFY `brandID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
+-- AUTO_INCREMENT for table `messages`
+--
+ALTER TABLE `messages`
+  MODIFY `message_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
 -- AUTO_INCREMENT for table `notification`
 --
 ALTER TABLE `notification`
-  MODIFY `notif_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `notif_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `payment_esewa`
+--
+ALTER TABLE `payment_esewa`
+  MODIFY `esewa_payment_id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT for table `shortlist`
+--
+ALTER TABLE `shortlist`
+  MODIFY `shortlistid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `type`
@@ -515,19 +746,19 @@ ALTER TABLE `type`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `vehicle`
 --
 ALTER TABLE `vehicle`
-  MODIFY `vehicleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `vehicleID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- AUTO_INCREMENT for table `vehiclecategory`
 --
 ALTER TABLE `vehiclecategory`
-  MODIFY `categoryID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `categoryID` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
