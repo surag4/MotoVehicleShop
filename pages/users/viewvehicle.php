@@ -37,9 +37,6 @@
     $shortlisted=$conn->shortList($_SESSION['userID'],$vehicle_id);
     $shortlisted=$shortlisted->fetch();
     }
-
-
-    
     
     $title="Vehicle Details";
     
