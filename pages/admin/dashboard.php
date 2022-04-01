@@ -3,6 +3,7 @@
 	$conn = new DatabaseTable('vehicle');
 	$allVec=$conn->findAllVec();
 	$vectype=$conn->findVecSale();
+	$newuser=$conn->registeredmonth();
 
 	if(isset($_GET['vid'])){
 	$conn2 = new DatabaseTable('vehiclecategory');
@@ -34,5 +35,5 @@
 
 	}
 
-	$content = loadTemplate('../templates/admin/dashboardTemplate.php', ['allVec'=>$allVec, 'vectype'=>$vectype]);//load template 
+	$content = loadTemplate('../templates/admin/dashboardTemplate.php', ['allVec'=>$allVec, 'vectype'=>$vectype,'newuser'=>$newuser]);//load template 
 ?>

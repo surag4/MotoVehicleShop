@@ -125,8 +125,19 @@ function findmsg($field, $value) {//passed as array
         ];
         $stmt->execute($criteria);//execute the criteria
 
+<<<<<<< Updated upstream
         return $stmt;
 }
+=======
+function registeredmonth(){
+    global $pdo;
+    $stmt = $pdo->prepare("SELECT DATE_FORMAT(`registeredDate`, '%M') as `Month`, COUNT(*) as `Total` FROM `users` GROUP BY MONTH(`registeredDate`); ");
+    $stmt->execute();
+    return $stmt;
+
+}
+
+>>>>>>> Stashed changes
 function findVecSale(){
     global $pdo;
     $stmt = $pdo->prepare("SELECT vehicle.vehicleID, vehicle.modelID, type.vehicleType FROM `vehicle` INNER JOIN type ON vehicle.modelID=type.modelID WHERE uploadStatus=".'1'.";");

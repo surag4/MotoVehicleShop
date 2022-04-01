@@ -11,6 +11,11 @@
     }
     ?>
     <div id="piechart"></div>
+
+    <?php foreach ($newuser as $monthnum) {
+        echo $monthnum['Month'];
+        echo $monthnum['Total'];
+    };?>
 </section>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
