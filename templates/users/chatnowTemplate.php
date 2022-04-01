@@ -1,7 +1,7 @@
 <article class="chattemplate">
     <div class="loyalinnfo">
         <div class="loyalinficn">
-            <img src="../images/logo/logo.png" alt="logo">
+            <img src="../images/logo/avatar1.png" alt="logo">
         </div>
         <div class="loyalname">
             Safari Express Pvt. Ltd
