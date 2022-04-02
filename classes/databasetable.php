@@ -73,6 +73,15 @@ function findAll() {
         return $stmt;
 }
 
+function getBuyerNSeller($shid) {
+    global $pdo;
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table.' JOIN vehicle On shortlist.vehicleID=vehicle.vehicleID AND shortlist.shortlistid='.$shid);//selects the value
+
+        $stmt->execute();//execute the value
+
+        return $stmt;
+}
+
 function handlingChat($mes_to,$mes_by){
     global $pdo;
     $stmt = $pdo->prepare('UPDATE messages SET message_to="'.$mes_to.'" WHERE message_by="'.$mes_by.'";');

@@ -77,11 +77,11 @@
      <label>Name:</label>
     <input type="text" id="delivery_name" name="delivery_name" required>
     <label>Address:</label>
-    <input type="text" id="delivery_addr" name="trandelivery_addr" required>
+    <input type="text" id="delivery_addr" name="delivery_addr" required>
     <label>Phone:</label>
-    <input type="number" id="delivery_phone" name="trandelivery_phone" required>
+    <input type="number" id="delivery_phone" name="delivery_phone" required>
     <label>Alternate Phone:</label>
-    <input type="number" id="alt_delivery_phone" name="alt_trandelivery_phone">
+    <input type="number" id="alt_delivery_phone" name="alt_delivery_phone">
 
     <input type="submit" name="cash_on_deliv" value="Pay Cash On Delivery">
 
