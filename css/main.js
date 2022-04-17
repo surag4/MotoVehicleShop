@@ -12,7 +12,13 @@ function hideNseek(evt, cityName) {
   evt.currentTarget.className += " active";
 }
 
-
+function confirm(){
+var btn1 = document.getElementById("submitVec");
+if(btn1.disabled==false){
+btn1.disabled=true;
+}
+else{btn1.disabled=false;}
+}
 
 function start(){
 }

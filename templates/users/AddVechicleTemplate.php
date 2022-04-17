@@ -1,3 +1,4 @@
+<body onload="confirm();">
 <section class="addVehicle">
   <form action="index.php?page=AddVechicle" name="addvec" method="POST" enctype="multipart/form-data">
     <div class="addVehicle-container">
@@ -74,17 +75,18 @@
         <label>Add picture Bill Book (Both Front and Back)</label>
         <input type="file" name="billBookFileToUpload[]" id="fileToUpload" multiple required>
       </div>
-
+      <input type="checkbox" id="confirmation" onchange="confirm();">
+      <label>I hereby agree to all the <a href="index.php?page=agreement" target="_blank">Terms and Conditions.</a></label>
       <input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
       <div class="registerbtns">
-          <input type="submit" name="submit" value="Submit">
+          <input type="submit" id="submitVec" name="submit" value="Submit">
       </div>
     </div>
 
        
     </form> 
 </section>
-
+</body>
 <script>
 // filter dropdown menu for brand/models
 
