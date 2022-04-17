@@ -3,16 +3,15 @@
 <p>Choose your Payment Option:</p>
 
 <div class="tab">
-  <button class="tablinks" onclick="hideNseek(event, 'Card')">Card</button>
+  <button class="tablinks" onclick="hideNseek(event, 'Deposit')">Deposit</button>
   <button class="tablinks" onclick="hideNseek(event, 'ESEWA')">ESEWA</button>
   <button class="tablinks" onclick="hideNseek(event, 'Cash')">Cash On Delivery</button>
 </div>
-<div id="Card" class="tabcontent">
+<div id="Deposit" class="tabcontent">
   <form action="index.php?page=payment" method="POST"> 
     
            <div class="card_paymentheader">
-            <h2>Card Payment</h2>
-                    <label for="fname">Accepted Cards</label>
+            <h2>Bank Payment</h2>
                     <div class="icon-container">
                     <i class="fa fa-cc-visa" style="color:navy;"></i>
                     <i class="fa fa-cc-amex" style="color:blue;"></i>
@@ -22,35 +21,35 @@
         </div>
         <input type="hidden" name="shid" value="<?php echo $_GET['shid'];?>">
         <div class="payment-name">
-            <label for="cname">Name on Card</label>
-            <input type="text" id="cname" name="Name" placeholder="Full Name">
+            <label for="cname">Depositor Name</label>
+            <input type="text" id="cname" name="depositer_name" placeholder="Full Name">
         </div>
 
         <div class="card-num">
-            <label for="ccnum">Credit card number</label>
-            <input type="number" id="ccnum" name="cardnumber" min="1000000000000000" max="9999999999999999" placeholder="1111222233334444">
+            <label for="ccnum">Deposit ID</label>
+            <input type="number" id="ccnum" name="deposit_num" min="10000000" max="99999999" placeholder="12345678">
         </div>  
 
         <div class="exp-month">
-            <label for="expmonth">Exp Month</label>
-            <input type="number" id="expmonth" name="exp_month" min="1" max="12" placeholder="September">
+            <label for="expmonth">Time</label>
+            <input type="time" id="expmonth" name="time" placeholder="07:00 AM">
         </div>
 
         <div class="exp-year">
-            <label for="expyear">Exp Year</label>
-            <input type="number" id="expyear" name="exp_year" min="2021" max="2026" placeholder="2018">
+            <label>Date</label>
+            <input type="date" id="expyear" name="date">
         </div>
         
         <div class="cvv">
-            <label for="cvv">CVV</label>
-            <input type="number" id="cvv" name="cvv" min="100" max="9999" placeholder="352">
+            <label for="cvv">Depositor Phone Number</label>
+            <input type="number" id="cvv" name="depositer_number" placeholder="+977-9841000000">
         </div>
 
          <div class="payment-header">
          
          </div>
         <div class="chkout">
-            <input type="submit" name="card_submit" value="PAY Through Card"> 
+            <input type="submit" name="deposit_submit" value="Submit"> 
         </div>
     
     </form>

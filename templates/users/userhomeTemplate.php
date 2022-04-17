@@ -40,7 +40,11 @@
                 <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['price'];?></span>
+                <span class="price"><?php 
+                $firstprice=intval($value['price']);
+                $finalPrice=$firstprice+0.05*$firstprice;
+                echo $finalPrice;
+                ?></span>
 
                 <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
@@ -82,7 +86,13 @@
                 <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['price'];?></span>
+                <span class="price"><?php 
+
+                $firstprice=intval($value['price']);
+                $finalPrice=$firstprice+0.05*$firstprice;
+                echo $finalPrice;
+                
+                ?></span>
 
                 <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
@@ -124,7 +134,11 @@
                 <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['price'];?></span>
+                <span class="price"><?php 
+                $firstprice=intval($value['price']);
+                $finalPrice=$firstprice+0.05*$firstprice;
+                echo $finalPrice;
+                ?></span>
 
                 <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>
@@ -166,7 +180,11 @@
                 <span class="cc"><?php echo $value['cubicCapacity'];?> CC</span>
 
                 <span class="priceicon"> <i class="fas fa-rupee-sign"></i> </span>
-                <span class="price"><?php echo $value['price'];?></span>
+                <span class="price"><?php 
+                $firstprice=intval($value['price']);
+                $finalPrice=$firstprice+0.05*$firstprice;
+                echo $finalPrice;
+                ?></span>
 
                 <a href="index.php?page=viewvehicle&vid=<?php echo $value['vehicleID'];?>&ermsg=0" class="getvechicledetails"> Details </a>
             </div>

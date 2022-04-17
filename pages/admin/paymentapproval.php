@@ -4,7 +4,7 @@
 	if(isset($_SESSION['login']) && $_SESSION['login'] == 1 && ($_SESSION['role']  == 'staff' || $_SESSION['role'] == 'admin')){
 		$conn = new DatabaseTable('payment_esewa');
 		$pendingesewa = $conn->findAll();
-		$conn2 = new DatabaseTable('creditinfo');
+		$conn2 = new DatabaseTable('bankinfo');
 		$pendingcard = $conn2->findAll();
 		$conn3 = new DatabaseTable('cashondelivery');
 		$pendingcash=$conn3->findAll();
@@ -64,12 +64,12 @@
 		$conn5= new DatabaseTable('shortlist');
 		$conn5->delete("vehicleID",$vec_id);
 
-		if($_GET['esewa']==1){
+		if($_GET['esewa']){
 		$conn8= new DatabaseTable('payment_esewa');
 		$conn8->delete("shid",$_GET["shid"]);}
 
-		if($_GET['card']==1){
-		$conn9= new DatabaseTable('creditinfo');
+		if($_GET['card']){
+		$conn9= new DatabaseTable('bankinfo');
 		$conn9->delete("shid",$_GET["shid"]);}
 
 
@@ -102,7 +102,7 @@
 		$conn8->delete("shid",$_GET["shid"]);}
 
 		if($_GET['card']==1){
-		$conn9= new DatabaseTable('creditinfo');
+		$conn9= new DatabaseTable('bankinfo');
 		$conn9->delete("shid",$_GET["shid"]);}
 
 

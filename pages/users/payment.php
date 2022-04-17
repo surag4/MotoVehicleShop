@@ -25,10 +25,10 @@
         $updateToSH = $conn1SH->update($val,"shortlistid");
         }
 
-        if(isset($_POST['card_submit'])){
-        $conn2 = new DatabaseTable('creditinfo');
+        if(isset($_POST['deposit_submit'])){
+        $conn2 = new DatabaseTable('bankinfo');
         $shid=$_POST['shid'];
-        unset($_POST['card_submit']);
+        unset($_POST['deposit_submit']);
         $insertVal= $conn2->insert($_POST);
 
         $conn1SH = new DatabaseTable('shortlist');
