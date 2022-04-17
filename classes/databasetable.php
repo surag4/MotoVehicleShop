@@ -203,7 +203,7 @@ function orderOn($parameter,$limit){
 
 function notifAll($usr) {
     global $pdo;
-        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' WHERE userID='.$usr.' ORDER BY notif_id DESC');//selects the value
+        $stmt = $pdo->prepare('SELECT * FROM ' . $this->table .' WHERE (userID='.$usr.' OR userID=0) ORDER BY notif_id DESC');//selects the value
 
         $stmt->execute();//execute the value
 
