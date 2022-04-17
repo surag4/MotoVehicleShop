@@ -1108,6 +1108,14 @@ input[type="number"]::-webkit-inner-spin-button {
   padding: 0.5rem;
 }
 
+.agreement {
+  display: flex !important;
+}
+
+.addVehicle-container input[type="checkbox"] {
+  width: 1rem !important;
+}
+
 .vecdesc textarea {
   width: 25rem;
   height: 7rem;

@@ -75,15 +75,18 @@
         <label>Add picture Bill Book (Both Front and Back)</label>
         <input type="file" name="billBookFileToUpload[]" id="fileToUpload" multiple required>
       </div>
-      <input type="checkbox" id="confirmation" onchange="confirm();">
-      <label>I hereby agree to all the <a href="index.php?page=agreement" target="_blank">Terms and Conditions.</a></label>
+
+      <div class="agreement">
+        <input type="checkbox" id="confirmation" onchange="confirm();">
+        <span>I hereby agree to all the <a href="index.php?page=agreement" target="_blank">Terms and Conditions.</a></span>
+      </div>
+
       <input type="hidden" name="userID" value="<?php echo $_SESSION['userID']; ?>">
       <div class="registerbtns">
           <input type="submit" id="submitVec" name="submit" value="Submit">
       </div>
     </div>
 
-       
     </form> 
 </section>
 </body>
