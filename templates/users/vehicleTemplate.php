@@ -41,7 +41,7 @@ foreach($data as $value){
         </div>
         
         <?php
-        echo '<div class="buybtn">';
+        echo '<div class="buybtn"><h5>Add To Cart</h5>';
          if($shortlisted && $_SESSION['login']!=0){
              if($buy==1){
                 echo '<a href=index.php?page=payment&shid='.$shortlisted['shortlistid'].'><button class="buyButton">BUY</button></a>';
@@ -61,6 +61,7 @@ foreach($data as $value){
         }        
         ?>
         <div class="shortlist">
+        
             <div class="like">
                 <i class="<?php if($shortlisted && $_SESSION['login']!=0){echo "likebtn press";}else{echo "likebtn";}?>"></i>
                 <span class="<?php if($shortlisted && $_SESSION['login']!=0){echo "likemsg press";}else{echo "likemsg";}?>">short listed!</span>
